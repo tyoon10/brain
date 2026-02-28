@@ -1,0 +1,73 @@
+title: BRAIN NYC
+baseurl: "https://brainnyc.org/"
+languageCode: en-us
+defaultContentLanguage: en
+theme: ["github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5"]
+
+buildFuture: true
+
+module:
+  imports:
+    - path: github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+security:
+  funcs:
+    getenv:
+      - '^WC_'
+      - '^HUGO_'
+      - '^CI$'
+
+# --- APPEARANCE ---
+params:
+  locale:
+    date_format: "Jan 2, 2006"
+
+  appearance:
+    theme_day: minimal
+    theme_night: dark
+    font: minimal
+    font_size: m
+
+  features:
+    math:
+      enable: false
+    syntax_highlighter:
+      enable: false
+    privacy_pack:
+      enable: false
+
+  header:
+    navbar:
+      enable: true
+      show_logo: false
+      highlight_active_link: true
+      show_search: false
+      show_day_night: true
+      align: r
+
+  author:
+    name: BRAIN NYC
+
+  footer:
+    copyright:
+      notice: '© 2026 BRAIN NYC. All rights reserved.'
+      license:
+        enable: false
+
+# --- NAVIGATION ---
+menus:
+  main:
+    - name: Home
+      url: '#'
+      weight: 10
+    - name: Events
+      url: '#events'
+      weight: 20
+    - name: Partner With Us
+      url: '#contact'
+      weight: 30

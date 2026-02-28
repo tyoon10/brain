@@ -1,0 +1,122 @@
+/* Hide the 'Published with Hugo Blox' text */
+.powered-by {
+  display: none !important;
+}
+
+/* Footer */
+.footer-copyright {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Hero section */
+.wg-hero {
+  .hero-title {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 3.5rem;
+  }
+  .hero-lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 640px;
+  }
+}
+
+/* Section headings */
+.home-section {
+  .section-heading h1 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Navbar */
+.navbar {
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+/* ---- Logo Grids ---- */
+.logo-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/* Partner school logos — larger */
+.partner-logo {
+  height: 44px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Sponsor logos — slightly smaller */
+.sponsor-grid {
+  gap: 32px;
+}
+
+.sponsor-logo {
+  height: 36px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+/* Dark mode: invert logos to white */
+.dark .logo-grid {
+  .partner-logo,
+  .sponsor-logo {
+    filter: brightness(0) invert(1);
+  }
+
+  .no-invert {
+    filter: none;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+}
+
+/* Partner CTA text */
+.partner-cta {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 16px;
+}
+
+/* Event cards */
+.card-simple.view-card {
+  .article-title a {
+    font-weight: 600;
+  }
+  .article-style p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Contact section */
+.wg-contact .fa-ul {
+  margin-left: 2rem;
+  li {
+    margin-bottom: 0.75rem;
+  }
+}
