@@ -1,5 +1,5 @@
 title: BRAIN NYC
-baseurl: "https://brainnyc.org/"
+baseurl: "https://brainyc.org/"
 languageCode: en-us
 defaultContentLanguage: en
 theme: ["github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5"]
