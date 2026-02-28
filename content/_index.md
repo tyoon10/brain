@@ -11,7 +11,7 @@ sections:
       text: |-
         **Business Roundtable for AI & Innovation in NYC**
 
-        New York City's first inter-university AI network — connecting the graduate AI communities of Columbia, NYU, Cornell Tech, and Yale into shared infrastructure for hackathons, workshops, founder matchmaking, and industry partnerships.
+        New York City's first inter-university AI network — uniting the graduate AI communities of Columbia, NYU, Cornell Tech, and Yale into shared infrastructure for hackathons, workshops, founder matchmaking, and industry partnerships.
       cta:
         label: View Events
         url: '#events'
@@ -20,10 +20,10 @@ sections:
         url: '#contact'
     design:
       background:
-        color: 'rgb(15, 15, 20)'
+        color: '#0a0a0f'
         text_color_light: true
       spacing:
-        padding: ["100px", "0", "80px", "0"]
+        padding: ["120px", "0", "100px", "0"]
 
   # ---- PARTNER SCHOOLS ----
   - block: markdown
@@ -47,7 +47,7 @@ sections:
         </div>
     design:
       spacing:
-        padding: ["40px", "0", "20px", "0"]
+        padding: ["60px", "0", "20px", "0"]
 
   # ---- SPONSORS ----
   - block: markdown
@@ -70,7 +70,7 @@ sections:
         <p class="partner-cta">Interested in sponsoring BRAIN events? <a href="#contact">Get in touch</a>.</p>
     design:
       spacing:
-        padding: ["20px", "0", "40px", "0"]
+        padding: ["20px", "0", "60px", "0"]
 
   # ---- EVENTS ----
   - block: collection
@@ -92,7 +92,7 @@ sections:
       view: card
       columns: "2"
       spacing:
-        padding: ["40px", "0", "40px", "0"]
+        padding: ["60px", "0", "60px", "0"]
 
   # ---- CONTACT ----
   - block: contact
@@ -100,8 +100,8 @@ sections:
     content:
       title: Partner With Us
       text: |-
-        BRAIN connects NYC-based companies with a curated, cross-school graduate AI community. Whether you're interested in sponsoring a workshop, hosting an office visit, or exploring a partnership — we'd love to hear from you.
-      email: brain@brainnyc.org
+        BRAIN connects NYC-based companies with a curated, cross-school graduate AI community. Sponsor a workshop, host an office visit, or explore a partnership.
+      email: brain@brainyc.org
       contact_links:
         - icon: linkedin
           icon_pack: fab
@@ -110,5 +110,5 @@ sections:
     design:
       columns: "2"
       spacing:
-        padding: ["40px", "0", "40px", "0"]
+        padding: ["60px", "0", "80px", "0"]
 ---

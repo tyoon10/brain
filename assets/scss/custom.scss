@@ -1,67 +1,190 @@
-/* Hide the 'Published with Hugo Blox' text */
+/* ===========================================
+   BRAIN NYC — Custom Styles
+   brainyc.org | Minimal dark theme
+   See STYLE.md for design system reference
+   =========================================== */
+
+/* ---- GLOBAL ---- */
+
+/* Hide HugoBlox branding */
 .powered-by {
   display: none !important;
 }
 
-/* Footer */
-.footer-copyright {
-  font-size: 0.85rem;
-  opacity: 0.7;
+/* Constrain content width for editorial feel */
+.container {
+  max-width: 960px;
 }
 
-/* Hero section */
-.wg-hero {
-  .hero-title {
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    font-size: 3.5rem;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---- DARK MODE OVERRIDES ---- */
+
+.dark {
+  /* Deeper, richer dark background */
+  --bg: #0a0a0f;
+  --surface: #111118;
+
+  body {
+    background-color: #0a0a0f;
   }
-  .hero-lead {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    opacity: 0.9;
-    max-width: 640px;
+
+  .home-section {
+    background-color: transparent;
   }
+
+  /* Subtle section alternation */
+  #schools,
+  #events {
+    background-color: rgba(255, 255, 255, 0.015);
+  }
+
+  /* Card styling */
+  .card {
+    background-color: #111118;
+    border: 1px solid #1e1e2a;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: #2a2a3a;
+    }
+  }
+
+  /* Navbar */
+  .navbar {
+    background-color: rgba(10, 10, 15, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Footer */
+  .page-footer {
+    background-color: #0a0a0f;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ---- TYPOGRAPHY ---- */
+
+.navbar {
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  opacity: 0.5;
 }
 
 /* Section headings */
 .home-section {
   .section-heading h1 {
     font-weight: 700;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     letter-spacing: -0.01em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
   }
 }
 
-/* Navbar */
-.navbar {
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
+/* ---- HERO ---- */
+
+.wg-hero {
+  .hero-title {
+    font-weight: 800;
+    font-size: 4.5rem;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    opacity: 0.85;
+    max-width: 580px;
+    margin-top: 8px;
+
+    strong {
+      opacity: 1;
+      font-weight: 500;
+    }
+  }
+
+  /* CTA buttons */
+  .btn {
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: #6366f1;
+    border-color: #6366f1;
+
+    &:hover {
+      background-color: #818cf8;
+      border-color: #818cf8;
+      transform: translateY(-1px);
+    }
+  }
+
+  .btn-light {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+      color: #fff;
+    }
+  }
 }
 
-/* ---- Logo Grids ---- */
+/* Responsive hero */
+@media (max-width: 768px) {
+  .wg-hero .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* ---- LOGO GRIDS ---- */
+
 .logo-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 48px;
   flex-wrap: wrap;
-  margin: 16px 0;
+  margin: 24px 0;
+  padding: 16px 0;
 
   a {
     display: inline-flex;
     align-items: center;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+
     &:hover {
       opacity: 1;
     }
   }
 }
 
-/* Partner school logos — larger */
+/* Partner school logos */
 .partner-logo {
-  height: 44px;
+  height: 48px;
   width: auto;
   max-width: 180px;
   object-fit: contain;
@@ -69,13 +192,13 @@
 
 /* Sponsor logos — slightly smaller */
 .sponsor-grid {
-  gap: 32px;
+  gap: 36px;
 }
 
 .sponsor-logo {
-  height: 36px;
+  height: 32px;
   width: auto;
-  max-width: 150px;
+  max-width: 140px;
   object-fit: contain;
 }
 
@@ -88,35 +211,109 @@
 
   .no-invert {
     filter: none;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 4px 8px;
-    border-radius: 6px;
   }
 }
 
 /* Partner CTA text */
 .partner-cta {
   text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 16px;
+  font-size: 0.85rem;
+  opacity: 0.4;
+  margin-top: 24px;
+
+  a {
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
-/* Event cards */
+/* Responsive logos */
+@media (max-width: 768px) {
+  .logo-grid {
+    gap: 28px;
+  }
+
+  .partner-logo {
+    height: 36px;
+  }
+
+  .sponsor-logo {
+    height: 24px;
+  }
+}
+
+/* ---- EVENT CARDS ---- */
+
 .card-simple.view-card {
   .article-title a {
     font-weight: 600;
+    letter-spacing: -0.01em;
   }
+
   .article-style p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    opacity: 0.75;
+  }
+
+  .article-metadata {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }
 
-/* Contact section */
-.wg-contact .fa-ul {
-  margin-left: 2rem;
-  li {
-    margin-bottom: 0.75rem;
+/* ---- CONTACT ---- */
+
+.wg-contact {
+  .fa-ul {
+    margin-left: 2rem;
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  a {
+    color: #6366f1;
+    text-decoration: none;
+
+    &:hover {
+      color: #818cf8;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+/* ---- SECTION SPACING ---- */
+
+.home-section {
+  padding: 80px 0;
+}
+
+/* ---- SCROLLBAR (dark mode) ---- */
+
+.dark {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a3a;
+    border-radius: 4px;
+
+    &:hover {
+      background: #3a3a4a;
+    }
   }
 }
