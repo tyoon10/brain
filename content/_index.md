@@ -11,7 +11,7 @@ sections:
       text: |-
         **Business Roundtable for AI & Innovation in NYC**
 
-        New York City's first inter-university AI network — where graduate communities from Columbia, NYU, and Cornell Tech come together to tackle real business challenges with AI, build cross-disciplinary ventures, and bridge the gap between cutting-edge technology and industry practice.
+        New York City's AI Alliance to Tackle Businesses' Hardest Challenges — where graduate communities from Columbia, NYU, and Cornell come together to solve real business problems with AI, build cross-disciplinary ventures, and bridge the gap between cutting-edge technology and industry practice.
       cta:
         label: View Events
         url: '#events'
@@ -65,7 +65,7 @@ sections:
           <a href="https://manus.im" target="_blank" rel="noopener">
             <img src="/media/logos/manus.png" alt="Manus" class="sponsor-logo">
           </a>
-          <a href="https://bizcrush.com" target="_blank" rel="noopener">
+          <a href="https://bizcrush.app" target="_blank" rel="noopener">
             <img src="/media/logos/bizcrush.png" alt="BizCrush" class="sponsor-logo">
           </a>
         </div>
