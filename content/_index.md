@@ -11,7 +11,7 @@ sections:
       text: |-
         **Business Roundtable for AI & Innovation in NYC**
 
-        New York City's first inter-university AI network — uniting the graduate AI communities of Columbia, NYU, Cornell Tech, and Yale into shared infrastructure for hackathons, workshops, founder matchmaking, and industry partnerships.
+        New York City's first inter-university AI network — where graduate communities from Columbia, NYU, and Cornell Tech come together to tackle real business challenges with AI, build cross-disciplinary ventures, and bridge the gap between cutting-edge technology and industry practice.
       cta:
         label: View Events
         url: '#events'
@@ -39,10 +39,7 @@ sections:
             <img src="/media/logos/nyu.png" alt="NYU Stern" class="partner-logo no-invert">
           </a>
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
-          </a>
-          <a href="https://som.yale.edu" target="_blank" rel="noopener" class="logo-tall">
-            <img src="/media/logos/yale-som.png" alt="Yale School of Management" class="partner-logo">
+            <img src="/media/logos/cornell-tech-text.png" alt="Cornell Tech" class="partner-logo">
           </a>
         </div>
     design:
@@ -64,9 +61,6 @@ sections:
           </a>
           <a href="https://eliseai.com" target="_blank" rel="noopener">
             <img src="/media/logos/elise.png" alt="EliseAI" class="sponsor-logo">
-          </a>
-          <a href="https://hebbia.ai" target="_blank" rel="noopener">
-            <img src="/media/logos/hebbia.png" alt="Hebbia" class="sponsor-logo">
           </a>
           <a href="https://manus.im" target="_blank" rel="noopener">
             <img src="/media/logos/manus.png" alt="Manus" class="sponsor-logo">
