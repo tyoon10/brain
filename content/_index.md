@@ -41,7 +41,7 @@ sections:
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
             <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
           </a>
-          <a href="https://som.yale.edu" target="_blank" rel="noopener">
+          <a href="https://som.yale.edu" target="_blank" rel="noopener" class="logo-tall">
             <img src="/media/logos/yale-som.png" alt="Yale School of Management" class="partner-logo">
           </a>
         </div>
