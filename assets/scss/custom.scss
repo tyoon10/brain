@@ -230,6 +230,11 @@ a:hover .no-invert {
   filter: grayscale(0) brightness(1) !important;
 }
 
+/* Stacked/portrait logos that need a taller slot */
+.logo-grid .logo-tall {
+  height: 88px;
+}
+
 .partner-cta {
   text-align: center;
   font-size: 0.8rem;

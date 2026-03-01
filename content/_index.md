@@ -35,7 +35,7 @@ sections:
           <a href="https://business.columbia.edu" target="_blank" rel="noopener">
             <img src="/media/logos/cbs.png" alt="Columbia Business School" class="partner-logo">
           </a>
-          <a href="https://www.stern.nyu.edu" target="_blank" rel="noopener">
+          <a href="https://www.stern.nyu.edu" target="_blank" rel="noopener" class="logo-tall">
             <img src="/media/logos/nyu.png" alt="NYU Stern" class="partner-logo no-invert">
           </a>
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
