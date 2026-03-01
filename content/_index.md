@@ -36,7 +36,7 @@ sections:
             <img src="/media/logos/cbs.png" alt="Columbia Business School" class="partner-logo">
           </a>
           <a href="https://www.stern.nyu.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/nyu-stern.png" alt="NYU Stern" class="partner-logo">
+            <img src="/media/logos/nyu.png" alt="NYU Stern" class="partner-logo no-invert">
           </a>
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
             <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
@@ -110,7 +110,7 @@ sections:
       title: Partner With Us
       text: |-
         BRAIN connects NYC-based companies with a curated, cross-school graduate AI community. Sponsor a workshop, host an office visit, or explore a partnership.
-      email: brain@brainyc.org
+      email: contact@brainyc.org
     design:
       columns: "2"
       spacing:
