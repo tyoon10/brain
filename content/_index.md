@@ -62,14 +62,17 @@ sections:
           <a href="https://lovable.dev" target="_blank" rel="noopener">
             <img src="/media/logos/lovable.svg" alt="Lovable" class="sponsor-logo">
           </a>
-          <a href="https://bizcrush.com" target="_blank" rel="noopener">
-            <img src="/media/logos/bizcrush.png" alt="BizCrush" class="sponsor-logo">
+          <a href="https://eliseai.com" target="_blank" rel="noopener">
+            <img src="/media/logos/elise.png" alt="EliseAI" class="sponsor-logo">
           </a>
           <a href="https://hebbia.ai" target="_blank" rel="noopener">
             <img src="/media/logos/hebbia.png" alt="Hebbia" class="sponsor-logo">
           </a>
           <a href="https://manus.im" target="_blank" rel="noopener">
             <img src="/media/logos/manus.png" alt="Manus" class="sponsor-logo">
+          </a>
+          <a href="https://bizcrush.com" target="_blank" rel="noopener">
+            <img src="/media/logos/bizcrush.png" alt="BizCrush" class="sponsor-logo">
           </a>
         </div>
 
