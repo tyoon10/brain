@@ -102,11 +102,6 @@ sections:
       text: |-
         BRAIN connects NYC-based companies with a curated, cross-school graduate AI community. Sponsor a workshop, host an office visit, or explore a partnership.
       email: brain@brainyc.org
-      contact_links:
-        - icon: linkedin
-          icon_pack: fab
-          name: LinkedIn
-          link: https://linkedin.com/company/brainnyc
     design:
       columns: "2"
       spacing:
