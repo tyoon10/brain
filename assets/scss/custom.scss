@@ -220,7 +220,15 @@ a { transition: color 0.2s ease; }
   filter: brightness(0) invert(1);
 }
 
-.no-invert { filter: none !important; }
+/* Colored logos (e.g. NYU purple) — desaturate to match muted aesthetic,
+   restore color on hover */
+.no-invert {
+  filter: grayscale(1) brightness(0.7) !important;
+  transition: filter 0.25s ease;
+}
+a:hover .no-invert {
+  filter: grayscale(0) brightness(1) !important;
+}
 
 .partner-cta {
   text-align: center;
