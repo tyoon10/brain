@@ -1,97 +1,70 @@
 /* ===========================================
    BRAIN NYC — Custom Styles
-   brainyc.org | Minimal dark theme
-   See STYLE.md for design system reference
+   brainyc.org | Dark mode only
+   See STYLE.md for full design system
    =========================================== */
 
 /* ---- GLOBAL ---- */
 
-/* Hide HugoBlox branding */
 .powered-by {
   display: none !important;
 }
 
-/* Constrain content width for editorial feel */
 .container {
   max-width: 960px;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* ---- DARK MODE OVERRIDES ---- */
+/* ---- BASE DARK THEME ---- */
 
-.dark {
-  /* Deeper, richer dark background */
-  --bg: #0a0a0f;
-  --surface: #111118;
-
-  body {
-    background-color: #0a0a0f;
-  }
-
-  .home-section {
-    background-color: transparent;
-  }
-
-  /* Subtle section alternation */
-  #schools,
-  #events {
-    background-color: rgba(255, 255, 255, 0.015);
-  }
-
-  /* Card styling */
-  .card {
-    background-color: #111118;
-    border: 1px solid #1e1e2a;
-    transition: transform 0.2s ease, border-color 0.3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      border-color: #2a2a3a;
-    }
-  }
-
-  /* Navbar */
-  .navbar {
-    background-color: rgba(10, 10, 15, 0.85) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  /* Footer */
-  .page-footer {
-    background-color: #0a0a0f;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-  }
+body {
+  background-color: #0a0a0f;
 }
 
-/* ---- TYPOGRAPHY ---- */
+.home-section {
+  background-color: transparent;
+}
+
+/* Subtle section alternation */
+#schools,
+#events {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* ---- NAVBAR ---- */
 
 .navbar {
   font-size: 0.9rem;
   letter-spacing: 0.02em;
+  background-color: rgba(10, 10, 15, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- FOOTER ---- */
+
+.page-footer {
+  background-color: #0a0a0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-copyright {
   font-size: 0.8rem;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* Section headings */
-.home-section {
-  .section-heading h1 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-  }
+/* ---- SECTION HEADINGS ---- */
+
+.home-section .section-heading h1 {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
 }
 
 /* ---- HERO ---- */
@@ -99,7 +72,7 @@ html {
 .wg-hero {
   .hero-title {
     font-weight: 800;
-    font-size: 4.5rem;
+    font-size: 5rem;
     letter-spacing: -0.04em;
     line-height: 1;
     margin-bottom: 0.5rem;
@@ -108,13 +81,14 @@ html {
   .hero-lead {
     font-size: 1.15rem;
     line-height: 1.75;
-    opacity: 0.85;
-    max-width: 580px;
+    opacity: 0.8;
+    max-width: 560px;
     margin-top: 8px;
 
     strong {
       opacity: 1;
       font-weight: 500;
+      color: #c8c8d4;
     }
   }
 
@@ -141,18 +115,17 @@ html {
 
   .btn-light {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.35);
       color: #fff;
     }
   }
 }
 
-/* Responsive hero */
 @media (max-width: 768px) {
   .wg-hero .hero-title {
     font-size: 3rem;
@@ -173,7 +146,7 @@ html {
   a {
     display: inline-flex;
     align-items: center;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
 
     &:hover {
@@ -182,15 +155,14 @@ html {
   }
 }
 
-/* Partner school logos */
 .partner-logo {
   height: 48px;
   width: auto;
   max-width: 180px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
-/* Sponsor logos — slightly smaller */
 .sponsor-grid {
   gap: 36px;
 }
@@ -200,25 +172,17 @@ html {
   width: auto;
   max-width: 140px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
-/* Dark mode: invert logos to white */
-.dark .logo-grid {
-  .partner-logo,
-  .sponsor-logo {
-    filter: brightness(0) invert(1);
-  }
-
-  .no-invert {
-    filter: none;
-  }
+.no-invert {
+  filter: none !important;
 }
 
-/* Partner CTA text */
 .partner-cta {
   text-align: center;
   font-size: 0.85rem;
-  opacity: 0.4;
+  opacity: 0.35;
   margin-top: 24px;
 
   a {
@@ -232,7 +196,6 @@ html {
   }
 }
 
-/* Responsive logos */
 @media (max-width: 768px) {
   .logo-grid {
     gap: 28px;
@@ -249,23 +212,64 @@ html {
 
 /* ---- EVENT CARDS ---- */
 
+/* Card container */
+.card {
+  background-color: #111118;
+  border: 1px solid #1e1e2a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: #2a2a3a;
+  }
+}
+
+/* Card image */
+.card img,
+.card .img-responsive {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid #1e1e2a;
+}
+
+/* Card content */
 .card-simple.view-card {
   .article-title a {
     font-weight: 600;
     letter-spacing: -0.01em;
+    color: #f0f0f5;
   }
 
   .article-style p {
     font-size: 0.9rem;
     line-height: 1.65;
-    opacity: 0.75;
+    opacity: 0.65;
+    color: #a0a0b0;
   }
 
   .article-metadata {
-    font-size: 0.8rem;
-    opacity: 0.5;
+    font-size: 0.75rem;
+    opacity: 0.45;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Event detail page */
+.article-container {
+  max-width: 720px;
+
+  .article-title {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .article-metadata {
+    opacity: 0.5;
+    font-size: 0.85rem;
   }
 }
 
@@ -297,23 +301,27 @@ html {
   padding: 80px 0;
 }
 
-/* ---- SCROLLBAR (dark mode) ---- */
+/* ---- SCROLLBAR ---- */
 
-.dark {
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+::-webkit-scrollbar {
+  width: 6px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: #0a0a0f;
-  }
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
 
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
+  background: #1e1e2a;
+  border-radius: 3px;
+
+  &:hover {
     background: #2a2a3a;
-    border-radius: 4px;
-
-    &:hover {
-      background: #3a3a4a;
-    }
   }
+}
+
+/* ---- LINKS (global) ---- */
+
+a {
+  transition: color 0.2s ease;
 }

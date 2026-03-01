@@ -1,0 +1,25 @@
+# BRAIN NYC custom theme — dark-only
+# Both [light] and [dark] use identical dark palette so the site is always dark.
+name = "BRAIN"
+
+[light]
+  primary = "#6366f1"
+
+  menu_primary = "rgba(10, 10, 15, 0.85)"
+  menu_text = "rgba(255,255,255,0.55)"
+  menu_text_active = "rgba(255,255,255,0.9)"
+  menu_title = "#ffffff"
+
+  home_section_odd = "#0a0a0f"
+  home_section_even = "#0d0d14"
+
+[dark]
+  primary = "#6366f1"
+
+  menu_primary = "rgba(10, 10, 15, 0.85)"
+  menu_text = "rgba(255,255,255,0.55)"
+  menu_text_active = "rgba(255,255,255,0.9)"
+  menu_title = "#ffffff"
+
+  home_section_odd = "#0a0a0f"
+  home_section_even = "#0d0d14"

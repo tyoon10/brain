@@ -28,8 +28,8 @@ params:
     date_format: "Jan 2, 2006"
 
   appearance:
-    theme_day: minimal
-    theme_night: dark
+    theme_day: brain
+    theme_night: brain
     font: minimal
     font_size: m
 
@@ -47,7 +47,7 @@ params:
       show_logo: false
       highlight_active_link: true
       show_search: false
-      show_day_night: true
+      show_day_night: false
       align: r
 
   author:
