@@ -36,7 +36,7 @@ sections:
             <img src="/media/logos/cbs.png" alt="Columbia Business School" class="partner-logo">
           </a>
           <a href="https://www.stern.nyu.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/nyu-stern.avif" alt="NYU Stern" class="partner-logo">
+            <img src="/media/logos/nyu-stern.png" alt="NYU Stern" class="partner-logo">
           </a>
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
             <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
@@ -93,7 +93,7 @@ sections:
         folders:
           - event
       sort_by: Date
-      sort_ascending: false
+      sort_ascending: true
       archive:
         enable: true
         text: "See all events"
