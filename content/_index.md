@@ -36,13 +36,13 @@ sections:
             <img src="/media/logos/cbs.png" alt="Columbia Business School" class="partner-logo">
           </a>
           <a href="https://www.stern.nyu.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/nyu-stern.svg" alt="NYU Stern" class="partner-logo">
+            <img src="/media/logos/nyu-stern.avif" alt="NYU Stern" class="partner-logo">
           </a>
           <a href="https://www.tech.cornell.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/cornell-tech.svg" alt="Cornell Tech" class="partner-logo">
+            <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
           </a>
           <a href="https://som.yale.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/yale-som.svg" alt="Yale School of Management" class="partner-logo">
+            <img src="/media/logos/yale-som.jpeg" alt="Yale School of Management" class="partner-logo">
           </a>
         </div>
     design:
@@ -63,7 +63,7 @@ sections:
             <img src="/media/logos/lovable.svg" alt="Lovable" class="sponsor-logo">
           </a>
           <a href="https://bizcrush.com" target="_blank" rel="noopener">
-            <img src="/media/logos/bizcrush.svg" alt="BizCrush" class="sponsor-logo">
+            <img src="/media/logos/bizcrush.png" alt="BizCrush" class="sponsor-logo">
           </a>
         </div>
 
