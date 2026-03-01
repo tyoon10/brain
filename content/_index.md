@@ -42,7 +42,7 @@ sections:
             <img src="/media/logos/cornell-tech.png" alt="Cornell Tech" class="partner-logo">
           </a>
           <a href="https://som.yale.edu" target="_blank" rel="noopener">
-            <img src="/media/logos/yale-som.jpeg" alt="Yale School of Management" class="partner-logo">
+            <img src="/media/logos/yale-som.png" alt="Yale School of Management" class="partner-logo">
           </a>
         </div>
     design:
@@ -64,6 +64,12 @@ sections:
           </a>
           <a href="https://bizcrush.com" target="_blank" rel="noopener">
             <img src="/media/logos/bizcrush.png" alt="BizCrush" class="sponsor-logo">
+          </a>
+          <a href="https://hebbia.ai" target="_blank" rel="noopener">
+            <img src="/media/logos/hebbia.png" alt="Hebbia" class="sponsor-logo">
+          </a>
+          <a href="https://manus.im" target="_blank" rel="noopener">
+            <img src="/media/logos/manus.png" alt="Manus" class="sponsor-logo">
           </a>
         </div>
 
