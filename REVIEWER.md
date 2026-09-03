@@ -38,7 +38,7 @@ CI validates and builds. It does not deploy.
 
 ## Industry brief data source
 
-`data/wire/` is the live brief. Industry items cover 2026-03-03 through 2026-09-03 and require `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit `category`. `data/wire-archive/` is not loaded. `data/newsletters/` is empty; `/newsletter/` is a designed holding page with no issues.
+`data/wire/` is the live brief. Industry items cover 2026-03-03 through 2026-09-03 and require `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit `category`. `data/wire-archive/` is not loaded. `data/newsletters/` is empty; `/newsletter/` is a designed holding page with no issues. How the industry brief is sourced: `data/wire/SOURCES.md`.
 
 To add a wire item:
 

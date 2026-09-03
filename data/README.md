@@ -18,6 +18,6 @@ Source of truth for this Roundtable preview. Each listed collection folder is a 
 
 Every record needs `inferred: true` or `inferred: false`. Do not invent prices, underwriter status, or sitting facts. If a sitting has a host page, set `href` so the docket links out.
 
-Industry wire items also need `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit it. Prefer a primary `href`. If a figure or status comes from reporting rather than a company primary source, set `inferred: true` and `inferredNote`.
+Industry wire items also need `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit it. Prefer a primary `href`. If a figure or status comes from reporting rather than a company primary source, set `inferred: true` and `inferredNote`. How the industry brief is sourced: `data/wire/SOURCES.md`.
 
 Empty folders are valid. Upcoming always resolves to an array.

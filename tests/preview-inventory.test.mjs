@@ -81,6 +81,11 @@ test('industry wire is categorized, in-window, and archived stubs stay unloaded'
   assert.equal(slugs.has('gpt-5-6-sol'), false);
   assert.equal(slugs.has('amazon-openai-partnership'), false);
   assert.ok(existsSync(join(root, 'data', 'wire-archive', 'spacex-xai.yml')));
+  assert.ok(existsSync(join(root, 'data', 'wire', 'SOURCES.md')));
+  assert.equal(
+    wire.some((item) => item._file?.endsWith('SOURCES.md')),
+    false,
+  );
 
   const held = wire.filter((item) => item.held).map((item) => item.slug).sort();
   assert.deepEqual(held, ['anthropic-decart', 'glm-held']);

@@ -35,7 +35,7 @@ function walk(path) {
   const stat = statSync(path);
   if (stat.isFile()) return [path];
   return readdirSync(path, { withFileTypes: true }).flatMap((entry) => {
-    if (entry.name === 'README.md' || entry.name === '.gitkeep') return [];
+    if (entry.name === 'README.md' || entry.name === 'SOURCES.md' || entry.name === '.gitkeep') return [];
     const next = join(path, entry.name);
     if (entry.isDirectory()) return walk(next);
     if (!/\.(njk|html|css|js|mjs|yml|yaml|md|svg)$/.test(entry.name)) return [];
