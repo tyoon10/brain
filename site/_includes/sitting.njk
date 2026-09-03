@@ -1,20 +1,29 @@
-<li>
-  <p class="meta">{{ sitting.startsAt | nyDate }} · {{ sitting.location }}</p>
-  <h2>
+<article class="sitting sitting--{{ sitting.relation }}">
+  <div class="sitting-band" aria-hidden="true"></div>
+  <div class="sitting-body">
+    <p class="meta">
+      <time datetime="{{ sitting.startsAt | isoDay }}">{{ sitting.startsAt | nyDay }}</time>
+      <span class="chip chip-{{ sitting.relation }}">{{ sitting.relation | relationLabel }}</span>
+      <span class="chip">{{ sitting.listedAs }}</span>
+      {% if sitting.eligibilityInferred %}
+      <span class="chip chip-inferred">Eligibility inferred</span>
+      {% endif %}
+    </p>
+    <h3 class="sitting-title"><a href="/docket/{{ sitting.slug }}/">{{ sitting.title }}</a></h3>
+    <p class="sitting-place">
+      {{ sitting.location }}
+      {% if sitting.campusSeats.length %}
+      ·
+      {% for id in sitting.campusSeats %}
+      <a href="/seats/{{ id }}/">{{ id | seatName }}</a>{% if not loop.last %}/{% endif %}
+      {% endfor %}
+      {% endif %}
+    </p>
     {% if sitting.href %}
-    <a href="{{ sitting.href }}" rel="noopener noreferrer">{{ sitting.title }}</a>
-    {% else %}
-    {{ sitting.title }}
+    <p>
+      <a class="text-link" href="{{ sitting.href }}" rel="noopener noreferrer">Register on the host site</a>
+      <span class="mute"> · outbound</span>
+    </p>
     {% endif %}
-  </h2>
-  <p>{{ sitting.summary }}</p>
-  {% if sitting.campusSeats.length %}
-  <p class="meta">
-    {% for id in sitting.campusSeats %}{{ id | seatName }}{% if not loop.last %} · {% endif %}{% endfor %}
-  </p>
-  {% endif %}
-  {% if sitting.href %}
-  <p class="actions"><a class="btn btn-quiet" href="{{ sitting.href }}" rel="noopener noreferrer">Open the sitting</a></p>
-  {% endif %}
-  {% if sitting.inferred %}<p class="inferred">Inferred{% if sitting.inferredNote %} · {{ sitting.inferredNote }}{% endif %}</p>{% endif %}
-</li>
+  </div>
+</article>

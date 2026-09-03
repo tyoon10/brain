@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+title: Campus seats
+description: CBS, Stern, Cornell Tech, Yale SOM.
+permalink: /seats/index.html
+---
+<header class="page-hero">
+  <p class="kicker">Four seats</p>
+  <h1>CBS, Stern, Cornell Tech, Yale SOM.</h1>
+  <p class="lede">{{ site.yaleLine }}</p>
+</header>
+<ul class="seats">
+  {% for school in programs %}
+  <li>
+    <span class="swatch" data-seat="{{ school.id }}"></span>
+    <div>
+      <strong><a href="/seats/{{ school.id }}/">{{ school.shortName }}</a></strong>
+      <span>{{ school.name }}</span>
+      <span>{{ school.sittingFrom }}</span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+<p class="actions">
+  <a class="btn" href="/map/">Map</a>
+  <a class="btn btn-quiet" href="/room/">Room</a>
+</p>

@@ -1,0 +1,28 @@
+---
+layout: layout.njk
+title: Offer book
+description: Eight student offers, verified 2026-08-18. Names as type.
+permalink: /offer-book/index.html
+eleventyNavigation:
+  key: Offer book
+  order: 50
+bodyClass: page-offers
+---
+<header class="page-hero">
+  <p class="kicker">Offer book · eight · verified 2026-08-18</p>
+  <h1>Eight student offers, as type.</h1>
+  <p class="lede">No partner marks. No invented prices. Each card is a name, a term, a door.</p>
+</header>
+<div class="offer-grid">
+  {% for offer in offers %}
+  <article class="offer-card">
+    <p class="kicker">{{ offer.counterpart }}</p>
+    <h2><a href="/offer-book/{{ offer.slug }}/">{{ offer.title }}</a></h2>
+    <p class="offer-term">{{ offer.terms }}</p>
+    <p>{{ offer.summary }}</p>
+    <p class="actions">
+      <a class="btn" href="{{ offer.href }}" rel="noopener noreferrer">Open the vendor door</a>
+    </p>
+  </article>
+  {% endfor %}
+</div>

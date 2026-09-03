@@ -1,43 +1,54 @@
 ---
 layout: layout.njk
+title: Choose a direction
+description: Three homepage directions. None is locked.
+section: Enter
+bodyClass: page-chooser
 ---
 
 <p class="kicker">{{ site.expansion }}</p>
-<h1>{{ site.publicName }}</h1>
-<p class="lede">{{ site.productLine }}</p>
+<h1>Roundtable</h1>
+<p class="lede">{{ site.productLine }} Question 12 is open. Open a direction.</p>
 <p class="yale">{{ site.yaleLine }}</p>
 <p class="door">{{ site.doorLine }}</p>
 
-<p class="actions">
-  <a class="btn" href="/offer-book/">Offer book</a>
-  <a class="btn btn-quiet" href="/docket/">Docket</a>
-</p>
+<div class="chooser" role="list">
+  <a class="chooser-card" href="/room/" role="listitem">
+    <p class="kicker">Direction A</p>
+    <h2>Room</h2>
+    <p>The product is the room. Four campus seats around one table.</p>
+    <span class="btn">Open Room</span>
+  </a>
+  <a class="chooser-card" href="/map/" role="listitem">
+    <p class="kicker">Direction B</p>
+    <h2>Map</h2>
+    <p>Local-first New York City, with Yale students joining from New Haven.</p>
+    <span class="btn">Open Map</span>
+  </a>
+  <a class="chooser-card" href="/table/" role="listitem">
+    <p class="kicker">Direction C</p>
+    <h2>Table</h2>
+    <p>The docket on the table. Information is the service.</p>
+    <span class="btn">Open Table</span>
+  </a>
+</div>
 
-<section class="block" aria-labelledby="seats-heading">
-  <h2 id="seats-heading">Campus seats</h2>
-  <ul class="seats">
-    {% for seat in programs %}
-    <li>
-      <span class="swatch" data-seat="{{ seat.id }}"></span>
-      <div>
-        <strong>{{ seat.shortName }}</strong>
-        <span>{{ seat.name }}</span>
-        <span>{{ seat.sittingFrom }}</span>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+<section class="stats" aria-label="What is on the table">
+  <a href="/docket/"><strong>{{ pastSittings.length }}</strong><span>sittings sat</span></a>
+  <a href="/offer-book/"><strong>{{ offers.length }}</strong><span>live offers</span></a>
+  <a href="/benefits/"><strong>{{ benefits.length }}</strong><span>benefits</span></a>
+  <a href="/brief/"><strong>{{ wire.length }}</strong><span>wire posts</span></a>
 </section>
 
-<section class="block" aria-labelledby="next-heading">
-  <h2 id="next-heading">Next sitting</h2>
-  {% if upcomingSittings.length == 0 %}
-    {% include "empty.njk" %}
-  {% else %}
-    <ul class="register">
-      {% for sitting in upcomingSittings %}
-        {% include "sitting.njk" %}
-      {% endfor %}
-    </ul>
-  {% endif %}
+<section class="block dense">
+  <h2>On the table now</h2>
+  <ul class="quick">
+    <li><a href="/docket/">Docket</a> — {{ pastSittings.length }} sat. Upcoming empty by design.</li>
+    <li><a href="/offer-book/">Offer book</a> — {{ offers.length }} live, verified 2026-08-18. Ungated.</li>
+    <li><a href="/brief/">Brief</a> — {{ wire.length }} posts, two lanes. GLM held.</li>
+    <li><a href="/benefits/">Benefits</a> — {{ benefits.length }} in four time-to-value tiers.</li>
+    <li><a href="/programs/">Programs</a> — {{ campusPrograms.length }} campus rows.</li>
+    <li><a href="/labs/">Labs</a> — {{ labs.length }} on the watchlist.</li>
+    <li><a href="/sitemap/">Atlas</a> — 43 pages in 12 sections.</li>
+  </ul>
 </section>

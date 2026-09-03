@@ -1,13 +1,15 @@
 ---
 layout: layout.njk
 title: Docket
-description: Upcoming and past sittings of the Roundtable.
+description: Upcoming empty, past board populated with eleven sittings.
+section: Docket
 permalink: /docket/index.html
+bodyClass: page-docket
 ---
 
-<p class="kicker">Sittings</p>
+<p class="kicker">Sittings · 30 Sep 2025 → 5 Aug 2026</p>
 <h1>Docket</h1>
-<p class="lede">What is next. Dated sittings with a host page link out. This page does not sell seats.</p>
+<p class="lede">Eleven sittings sat. Owned, co-hosted, and listed are distinct. Register links out. Eligibility inferred is marked inferred.</p>
 
 <section class="block" aria-labelledby="upcoming-heading">
   <h2 id="upcoming-heading">Upcoming</h2>
@@ -16,21 +18,26 @@ permalink: /docket/index.html
     {% set emptyBody = "Upcoming always resolves. When a sitting is dated, it is listed here." %}
     {% include "empty.njk" %}
   {% else %}
-    <ul class="register">
+    <div class="board">
       {% for sitting in upcomingSittings %}
         {% include "sitting.njk" %}
       {% endfor %}
-    </ul>
+    </div>
   {% endif %}
+  <p><a class="text-link" href="/docket/upcoming/">Upcoming as its own page</a></p>
 </section>
 
-{% if pastSittings.length > 0 %}
 <section class="block" aria-labelledby="past-heading">
-  <h2 id="past-heading">Sat</h2>
-  <ul class="register">
+  <h2 id="past-heading">Sat · {{ pastSittings.length }}</h2>
+  <p class="legend">
+    <span class="chip chip-owned">Owned</span>
+    <span class="chip chip-co-hosted">Co-hosted</span>
+    <span class="chip chip-listed">Listed</span>
+    <span class="chip chip-inferred">Eligibility inferred</span>
+  </p>
+  <div class="board">
     {% for sitting in pastSittings %}
       {% include "sitting.njk" %}
     {% endfor %}
-  </ul>
+  </div>
 </section>
-{% endif %}

@@ -15,8 +15,9 @@
     "test": "node --test tests/*.test.mjs",
     "assert:html": "node scripts/assert-no-client-js.mjs",
     "assert:firewall": "node scripts/assert-firewall.mjs",
+    "assert:pages": "node scripts/assert-pages.mjs",
     "check:links": "node scripts/check-outbound-links.mjs",
-    "ci": "npm run validate && npm run lint:copy && npm test && npm run assert:firewall && npm run build && npm run lint:copy -- --built && npm run assert:html && npm run assert:firewall"
+    "ci": "npm run validate && npm run lint:copy && npm test && npm run assert:firewall && npm run build && npm run lint:copy -- --built && npm run assert:html && npm run assert:pages && npm run assert:firewall"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

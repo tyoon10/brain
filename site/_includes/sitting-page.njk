@@ -1,0 +1,20 @@
+<p class="kicker">{{ sitting.listedAs }} · {{ sitting.relation | relationLabel }}</p>
+<h1>{{ sitting.title }}</h1>
+<p class="meta">{{ sitting.startsAt | nyDate }} · {{ sitting.location }}</p>
+<p class="lede">{{ sitting.summary }}</p>
+{% if sitting.campusSeats.length %}
+<p>
+  {% for id in sitting.campusSeats %}
+  <a href="/seats/{{ id }}/">{{ id | seatName }}</a>{% if not loop.last %} · {% endif %}
+  {% endfor %}
+</p>
+{% endif %}
+{% if sitting.eligibilityInferred %}
+<p class="inferred">Inferred · campus-seat eligibility</p>
+{% endif %}
+{% if sitting.href %}
+<p class="actions">
+  <a class="btn" href="{{ sitting.href }}" rel="noopener noreferrer">Register on the host site</a>
+</p>
+{% endif %}
+<p><a class="text-link" href="/docket/">Back to the docket</a></p>

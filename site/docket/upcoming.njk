@@ -1,0 +1,16 @@
+---
+layout: layout.njk
+title: Upcoming
+description: Designed empty upcoming docket.
+section: Docket
+permalink: /docket/upcoming/index.html
+---
+
+<p class="kicker">Docket</p>
+<h1>Upcoming</h1>
+{% if upcomingSittings.length == 0 %}
+  {% set emptyTitle = "No sitting is on the docket yet." %}
+  {% set emptyBody = "Upcoming always resolves. The past board stays on the docket." %}
+  {% include "empty.njk" %}
+{% endif %}
+<p class="actions"><a class="btn" href="/docket/">Past board</a></p>

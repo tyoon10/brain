@@ -1,0 +1,21 @@
+---
+pagination:
+  data: briefPages
+  size: 1
+  alias: item
+permalink: "/brief/{{ item.slug }}/index.html"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ item.title }}"
+---
+<article class="page-hero">
+  <p class="kicker">Brief · industry · {{ item.publishedAt | isoDay }}</p>
+  <h1>{{ item.title }}</h1>
+</article>
+<p class="meta">
+  {% if item.held %}<span class="chip chip-held">Held</span>{% endif %}
+  {% if item.inferred %}<span class="chip chip-inferred">Inferred</span>{% endif %}
+</p>
+<p class="lede">{{ item.summary }}</p>
+{% if item.inferredNote %}<p class="inferred">{{ item.inferredNote }}</p>{% endif %}
+<p class="actions"><a class="btn btn-quiet" href="/brief/">Back to the brief</a></p>

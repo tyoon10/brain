@@ -1,0 +1,20 @@
+---
+pagination:
+  data: offers
+  size: 1
+  alias: offer
+permalink: "/offer-book/{{ offer.slug }}/index.html"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ offer.title }}"
+---
+<article class="page-hero">
+  <p class="kicker">Offer book · {{ offer.counterpart }} · verified {{ offer.verifiedOn | isoDay }}</p>
+  <h1>{{ offer.title }}</h1>
+  <p class="lede">{{ offer.terms }}</p>
+</article>
+<p>{{ offer.summary }}</p>
+<p class="actions">
+  <a class="btn" href="{{ offer.href }}" rel="noopener noreferrer">Open {{ offer.counterpart }}</a>
+  <a class="btn btn-quiet" href="/offer-book/">Offer book</a>
+</p>

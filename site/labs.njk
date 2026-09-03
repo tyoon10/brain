@@ -1,0 +1,22 @@
+---
+layout: layout.njk
+title: Labs
+description: Nine lab doors on the watchlist. GLM held.
+permalink: /labs/index.html
+---
+<header class="page-hero">
+  <p class="kicker">Watchlist · nine labs</p>
+  <h1>Doors we keep watching.</h1>
+  <p class="lede">Not a live board. Names as type. GLM held.</p>
+</header>
+<ol class="lab-list">
+  {% for lab in labs %}
+  <li>
+    <p class="lab-head">
+      <strong>{{ lab.name }}</strong>
+      {% if lab.slug == 'glm' %}<span class="chip chip-held">Held</span>{% endif %}
+    </p>
+    <p>{{ lab.note }}</p>
+  </li>
+  {% endfor %}
+</ol>

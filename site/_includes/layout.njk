@@ -15,7 +15,7 @@
       {% endfor %}
     </style>
   </head>
-  <body>
+  <body class="{{ bodyClass }}">
     <a class="skip" href="#content">Skip to content</a>
     <header class="mast">
       <a class="brand" href="/">
@@ -35,8 +35,29 @@
       {{ content | safe }}
     </main>
     <footer class="colophon">
-      <p>{{ site.legalName }} · {{ site.expansion }}</p>
-      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <div>
+        <p>{{ site.legalName }} · {{ site.expansion }} · The door is free.</p>
+        <p class="ia-strip">
+          <a href="/">Enter</a>
+          <a href="/room/">Room</a>
+          <a href="/map/">Map</a>
+          <a href="/table/">Table</a>
+          <a href="/sitemap/">Atlas</a>
+          <a href="/docket/">Docket</a>
+          <a href="/offer-book/">Offer book</a>
+          <a href="/brief/">Brief</a>
+          <a href="/benefits/">Benefits</a>
+          <a href="/programs/">Programs</a>
+          <a href="/labs/">Labs</a>
+          <a href="/freshness/">Freshness</a>
+          <a href="/seats/">Seats</a>
+          <a href="/door/">Door</a>
+        </p>
+      </div>
+      <p>
+        <a href="/sitemap/">43 pages · 12 sections</a>
+        · <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
     </footer>
   </body>
 </html>

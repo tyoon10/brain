@@ -1,36 +1,36 @@
 # Reviewer note
 
-Canonical preview for **https://github.com/tyoon10/brain** only. Do not merge into `tyoon10.github.io`. Do not treat this PR as a production publish.
+Canonical preview for **https://github.com/tyoon10/brain** only. Do not merge. Do not publish. Do not treat this PR as a production cutover to `brainyc.org` or twyoon.com.
 
 ## Visual system
 
-BRAIN kit **v2.0 (“docket”)** is imported as the locked token set: canvas `#f2f3f0` / dark `#121412`, surface `#e9ebe6`, ink `#1a1c19`, accent `#1e4d45` (actions only; dark `#8fb5ab`). Type: Source Serif 4 for display and body, IBM Plex Sans for UI, IBM Plex Mono for dates and chips. Radii 0 / 4 / 999. Zero shadows.
+BRAIN kit **v2.0 (“docket”)** is the locked token set: canvas `#f2f3f0` / dark `#121412`, surface `#e9ebe6`, ink `#1a1c19`, accent `#1e4d45` (actions only; dark `#8fb5ab`). Type: Source Serif 4 for display and body, IBM Plex Sans for UI, IBM Plex Mono for dates and chips. Radii 0 / 4 / 999. Zero shadows.
 
-This is **not** Parchment & Navy, **not** twyoon.com, and **not** the retired Hugo Alliance landing page. Those stacks were removed rather than extended.
+This is **not** Parchment & Navy, **not** twyoon.com, and **not** the retired Hugo Alliance landing page.
 
 ## Homepage direction (Question 12)
 
-Still **open**. This preview is a quiet index — campus seats, next sitting, offer book and docket — so Room vs Map vs a third is not locked in layout or in copy.
+Still **open**. `/` is a chooser. `/room/`, `/map/`, and `/table/` are first-class homepage directions. Table is the Roundtable cloth.
 
-## Facts
+## What a reviewer should click
 
-Campus seats (CBS, Stern, Cornell Tech, Yale SOM) and the Yale line are confirmed. Seat colour values stay in `data/programs` as swatches only. Public surface is names in type, plus a reserved empty mark slot — no partner/school mark files, no favicon scrapes, no generated stand-ins. Offer book, wire, partners, and the docket are empty by design: nothing was invented, and prior-site sittings were not carried forward without reconfirmation. `upcoming()` still resolves.
+- Atlas `/sitemap/` — 43 pages in 12 sections
+- Docket `/docket/` — designed empty upcoming + 11 past sittings (owned / co-hosted / listed)
+- Offer book `/offer-book/` — 8 offers verified 2026-08-18
+- Brief `/brief/` — 20-post two-lane wire; GLM held
+- Benefits `/benefits/` — 19 rows, four time-to-value tiers
+- Programs, labs, freshness, seats, door
 
-CI `assert:firewall` fails if `static/media/logos/`, Hugo (`hugo.yaml`, `go.mod`, `layouts/`, `content/`), or mark image files return.
+Public copy is Roundtable lexicon. Names as type. No partner marks. Register links out. Eligibility inferred is marked inferred. Wispr door is `https://wisprflow.ai/students`.
 
 ## Unattended jobs
 
-Preview branch only (`cursor/roundtable-site-e849`):
-
-1. **Nightly rebuild** — `workflow_dispatch` plus weekday `schedule` at 12:00 UTC. Runs `npm ci` and `npm run ci` so Eleventy recomputes upcoming. Never deploys.
-2. **Outbound-link checks** — after that build, HEAD/GET http(s) `href`s from `/`, `/offer-book/`, `/docket/`, `/brief/` only. Fails on 4xx/5xx/timeouts. `mailto:` and hashes are skipped. Empty collections are valid. No URLs are invented.
-
-`schedule` does not fire until the workflow file exists on the default branch. Use workflow_dispatch on this branch until then. Jobs no-op on any other ref.
+Preview branch only (`cursor/roundtable-site-e849`): nightly rebuild and outbound-link checks. They never deploy.
 
 ## Repo description
 
-This agent cannot change the GitHub repository description (read-only). Brand noted it still says “NYC AI Alliance”. That name is not used on the public pages; please set the description to Roundtable / BRAIN in the repo settings.
+This agent cannot change the GitHub repository description (read-only). It still says “NYC AI Alliance”. That name is not used on the public pages.
 
 ## Cutover
 
-CI and the unattended jobs validate and build. They do not deploy. `brainyc.org` stays as it is until an explicit publish is asked for.
+CI validates and builds. It does not deploy.

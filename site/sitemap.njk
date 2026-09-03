@@ -1,0 +1,105 @@
+---
+layout: layout.njk
+title: Atlas
+description: Forty-three public pages in twelve sections.
+permalink: /sitemap/index.html
+eleventyNavigation:
+  key: Sitemap
+  order: 90
+bodyClass: page-atlas
+---
+<header class="page-hero">
+  <p class="kicker">Atlas · 12 sections · 43 pages</p>
+  <h1>The Roundtable, mapped.</h1>
+  <p class="lede">Every public route in this preview. Information architecture — not four empty doors.</p>
+</header>
+
+<div class="atlas">
+  <section>
+    <h2>1. Enter</h2>
+    <ol>
+      <li><a href="/">Chooser</a> — three homepage directions; question 12 still open.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>2. Directions</h2>
+    <ol>
+      <li><a href="/room/">Room</a> — one sitting, one chair.</li>
+      <li><a href="/map/">Map</a> — four campus seats on one city.</li>
+      <li><a href="/table/">Table</a> — Roundtable cloth, names as type.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>3. Atlas</h2>
+    <ol>
+      <li><a href="/sitemap/">This page</a></li>
+    </ol>
+  </section>
+  <section>
+    <h2>4. Docket</h2>
+    <ol>
+      <li><a href="/docket/">Board</a> — upcoming empty by design; eleven past sittings.</li>
+      <li><a href="/docket/upcoming/">Upcoming</a> — designed empty.</li>
+      {% for sitting in events %}
+      <li><a href="/docket/{{ sitting.slug }}/">{{ sitting.title }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section>
+    <h2>5. Offer book</h2>
+    <ol>
+      <li><a href="/offer-book/">Index</a> — eight verified 2026-08-18.</li>
+      {% for offer in offers %}
+      <li><a href="/offer-book/{{ offer.slug }}/">{{ offer.title }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section>
+    <h2>6. Brief</h2>
+    <ol>
+      <li><a href="/brief/">Two-lane wire</a> — twenty posts; GLM held.</li>
+      {% for item in briefPages %}
+      <li><a href="/brief/{{ item.slug }}/">{{ item.title }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section>
+    <h2>7. Benefits</h2>
+    <ol>
+      <li><a href="/benefits/">Ledger</a> — nineteen rows, four time-to-value tiers.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>8. Programs</h2>
+    <ol>
+      <li><a href="/programs/">Campus table</a> — six rows, as of 2026-08-29.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>9. Labs</h2>
+    <ol>
+      <li><a href="/labs/">Watchlist</a> — nine doors.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>10. Freshness</h2>
+    <ol>
+      <li><a href="/freshness/">Eleven mechanisms</a></li>
+    </ol>
+  </section>
+  <section>
+    <h2>11. Seats</h2>
+    <ol>
+      <li><a href="/seats/">Campus seats</a></li>
+      {% for school in programs %}
+      <li><a href="/seats/{{ school.id }}/">{{ school.shortName }}</a></li>
+      {% endfor %}
+    </ol>
+  </section>
+  <section>
+    <h2>12. Door</h2>
+    <ol>
+      <li><a href="/door/">How the door works</a> — free. Not a box office.</li>
+    </ol>
+  </section>
+</div>

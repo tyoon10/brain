@@ -1,0 +1,13 @@
+---
+layout: layout.njk
+pagination:
+  data: events
+  size: 1
+  alias: sitting
+permalink: "/docket/{{ sitting.slug }}/index.html"
+eleventyComputed:
+  title: "{{ sitting.title }}"
+  section: Docket
+---
+
+{% include "sitting-page.njk" %}

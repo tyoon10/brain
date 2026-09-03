@@ -7,8 +7,13 @@ export default {
   productLine: 'The room is the product. Information is the service.',
   doorLine: 'The door is free. This is not a box office.',
   nav: [
-    { href: '/offer-book/', label: 'Offer book' },
+    { href: '/room/', label: 'Room' },
+    { href: '/map/', label: 'Map' },
+    { href: '/table/', label: 'Table' },
     { href: '/docket/', label: 'Docket' },
+    { href: '/offer-book/', label: 'Offer book' },
     { href: '/brief/', label: 'Brief' },
+    { href: '/benefits/', label: 'Benefits' },
+    { href: '/sitemap/', label: 'Sitemap' },
   ],
 };

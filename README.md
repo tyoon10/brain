@@ -10,25 +10,30 @@ Public noun: **Roundtable**. The room is the product. Information is the service
 
 The door is free. This is not a box office.
 
+Question 12 (homepage direction) is still open. `/` chooses among `/room/`, `/map/`, and `/table/`.
+
 ## Pages
 
-- `/` — index (homepage direction is still open)
-- `/offer-book/` — ungated offer book
+43 public pages in 12 sections. Start at `/sitemap/`.
+
+- `/` — chooser
+- `/room/`, `/map/`, `/table/` — three homepage directions
 - `/docket/` — sittings (upcoming always resolves; host pages link out)
-- `/brief/` — the wire
+- `/offer-book/` — ungated offer book
+- `/brief/` — two-lane wire
+- `/benefits/` — member-benefit ledger
+- `/programs/`, `/labs/`, `/freshness/`, `/seats/`, `/door/`
 
 ## Public data
 
-Edit files in `data/`: `events`, `offers`, `programs`, `wire`, `partners`.
-
-Campus-seat colours are data, not the brand. Partners are names as text only. Every record sets `inferred`. Empty folders are valid.
+Edit files in `data/`. Campus-seat colours are data, not the brand. Partners are names as text only. Every record sets `inferred`. Empty upcoming is valid.
 
 ## Develop
 
 ```bash
 npm install
 npm run dev          # http://localhost:4321
-npm run ci           # Zod data, copy/kit lint, tests, firewall, build
+npm run ci           # Zod data, copy/kit lint, tests, firewall, build, 43-page count
 npm run check:links  # HEAD/GET http(s) hrefs on the four public pages
 ```
 
@@ -36,9 +41,7 @@ Greenfield [Eleventy](https://www.11ty.dev/) static HTML. Zero client JS by defa
 
 ## Unattended jobs (preview branch)
 
-`.github/workflows/preview-unattended.yml` attaches a nightly rebuild (so Eleventy can recompute upcoming) and an outbound-link check. Both are **non-deploy**. They no-op unless the run is on `cursor/roundtable-site-e849`.
-
-GitHub will not fire `schedule` until that workflow file exists on the default branch. Until then, run **Actions → Preview unattended → Run workflow** on this preview branch.
+`.github/workflows/preview-unattended.yml` attaches a nightly rebuild and an outbound-link check. Both are **non-deploy**. They no-op unless the run is on `cursor/roundtable-site-e849`.
 
 `.github/workflows/ci.yml` stays a pull-request / push check. It does not deploy.
 
