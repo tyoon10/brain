@@ -12,7 +12,6 @@ const partners = loadCollection('partners');
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'site/css': 'css' });
-  eleventyConfig.addPassthroughCopy({ 'site/favicon.svg': 'favicon.svg' });
   eleventyConfig.addPassthroughCopy({ 'site/CNAME': 'CNAME' });
 
   eleventyConfig.addGlobalData('programs', programs);

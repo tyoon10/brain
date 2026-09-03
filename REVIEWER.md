@@ -14,7 +14,9 @@ Still **open**. This preview is a quiet index — campus seats, next sitting, of
 
 ## Facts
 
-Campus seats (CBS, Stern, Cornell Tech, Yale SOM) and the Yale line are confirmed. Offer book, wire, partners, and the docket are empty by design: nothing was invented, and prior-site sittings were not carried forward without reconfirmation. `upcoming()` still resolves.
+Campus seats (CBS, Stern, Cornell Tech, Yale SOM) and the Yale line are confirmed. Seat colour values stay in `data/programs` as swatches only. Public surface is names in type, plus a reserved empty mark slot — no partner/school mark files, no favicon scrapes, no generated stand-ins. Offer book, wire, partners, and the docket are empty by design: nothing was invented, and prior-site sittings were not carried forward without reconfirmation. `upcoming()` still resolves.
+
+CI `assert:firewall` fails if `static/media/logos/`, Hugo (`hugo.yaml`, `go.mod`, `layouts/`, `content/`), or mark image files return.
 
 ## Cutover
 
