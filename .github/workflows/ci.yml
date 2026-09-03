@@ -21,3 +21,5 @@ jobs:
 
 # Production deploy is omitted on purpose.
 # Do not publish this preview until an explicit cutover is asked for.
+# Unattended rebuild + outbound-link checks live in preview-unattended.yml
+# and never deploy.

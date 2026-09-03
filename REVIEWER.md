@@ -18,6 +18,19 @@ Campus seats (CBS, Stern, Cornell Tech, Yale SOM) and the Yale line are confirme
 
 CI `assert:firewall` fails if `static/media/logos/`, Hugo (`hugo.yaml`, `go.mod`, `layouts/`, `content/`), or mark image files return.
 
+## Unattended jobs
+
+Preview branch only (`cursor/roundtable-site-e849`):
+
+1. **Nightly rebuild** — `workflow_dispatch` plus weekday `schedule` at 12:00 UTC. Runs `npm ci` and `npm run ci` so Eleventy recomputes upcoming. Never deploys.
+2. **Outbound-link checks** — after that build, HEAD/GET http(s) `href`s from `/`, `/offer-book/`, `/docket/`, `/brief/` only. Fails on 4xx/5xx/timeouts. `mailto:` and hashes are skipped. Empty collections are valid. No URLs are invented.
+
+`schedule` does not fire until the workflow file exists on the default branch. Use workflow_dispatch on this branch until then. Jobs no-op on any other ref.
+
+## Repo description
+
+This agent cannot change the GitHub repository description (read-only). Brand noted it still says “NYC AI Alliance”. That name is not used on the public pages; please set the description to Roundtable / BRAIN in the repo settings.
+
 ## Cutover
 
-CI validates and builds. It does not deploy. `brainyc.org` stays as it is until an explicit publish is asked for.
+CI and the unattended jobs validate and build. They do not deploy. `brainyc.org` stays as it is until an explicit publish is asked for.
