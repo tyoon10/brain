@@ -1,0 +1,43 @@
+---
+layout: layout.njk
+---
+
+<p class="kicker">{{ site.expansion }}</p>
+<h1>{{ site.publicName }}</h1>
+<p class="lede">{{ site.productLine }}</p>
+<p class="yale">{{ site.yaleLine }}</p>
+<p class="door">{{ site.doorLine }}</p>
+
+<p class="actions">
+  <a class="btn" href="/offer-book/">Offer book</a>
+  <a class="btn btn-quiet" href="/docket/">Docket</a>
+</p>
+
+<section class="block" aria-labelledby="seats-heading">
+  <h2 id="seats-heading">Campus seats</h2>
+  <ul class="seats">
+    {% for seat in programs %}
+    <li>
+      <span class="pip" data-seat="{{ seat.id }}"></span>
+      <div>
+        <strong>{{ seat.shortName }}</strong>
+        <span>{{ seat.name }}</span>
+        <span>{{ seat.sittingFrom }}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="block" aria-labelledby="next-heading">
+  <h2 id="next-heading">Next sitting</h2>
+  {% if upcomingSittings.length == 0 %}
+    {% include "empty.njk" %}
+  {% else %}
+    <ul class="register">
+      {% for sitting in upcomingSittings %}
+        {% include "sitting.njk" %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>

@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+title: Offer book
+description: Ungated offer book for the Roundtable.
+permalink: /offer-book/index.html
+---
+
+<p class="kicker">Ungated</p>
+<h1>Offer book</h1>
+<p class="lede">The book is open. There is no gate. Counterparts and underwriters are named as text.</p>
+
+{% if offers.length == 0 %}
+  {% set emptyTitle = "Nothing is listed yet." %}
+  {% set emptyBody = "When an offer is ready, it is written into the public data files and appears here. The book stays readable whether it is full or empty." %}
+  {% include "empty.njk" %}
+{% else %}
+  <ul class="register">
+    {% for offer in offers %}
+    <li>
+      <p class="meta">{{ offer.counterpart }}{% if offer.underwriter %} · Underwriter {{ offer.underwriter }}{% endif %}</p>
+      <h2>
+        {% if offer.href %}
+        <a href="{{ offer.href }}" rel="noopener noreferrer">{{ offer.title }}</a>
+        {% else %}
+        {{ offer.title }}
+        {% endif %}
+      </h2>
+      <p>{{ offer.summary }}</p>
+      {% if offer.inferred %}<p class="inferred">Inferred{% if offer.inferredNote %} · {{ offer.inferredNote }}{% endif %}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+{% endif %}

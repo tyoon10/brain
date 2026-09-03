@@ -1,0 +1,14 @@
+export default {
+  publicName: 'Roundtable',
+  legalName: 'BRAIN',
+  expansion: 'Business Roundtable for AI & Innovation in NYC',
+  email: 'contact@brainyc.org',
+  yaleLine: 'New York City, with Yale students joining from New Haven.',
+  productLine: 'The room is the product. Information is the service.',
+  doorLine: 'The door is free. This is not a box office.',
+  nav: [
+    { href: '/offer-book/', label: 'Offer book' },
+    { href: '/docket/', label: 'Docket' },
+    { href: '/brief/', label: 'Brief' },
+  ],
+};

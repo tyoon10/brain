@@ -1,0 +1,20 @@
+<li>
+  <p class="meta">{{ sitting.startsAt | nyDate }} · {{ sitting.location }}</p>
+  <h2>
+    {% if sitting.href %}
+    <a href="{{ sitting.href }}" rel="noopener noreferrer">{{ sitting.title }}</a>
+    {% else %}
+    {{ sitting.title }}
+    {% endif %}
+  </h2>
+  <p>{{ sitting.summary }}</p>
+  {% if sitting.campusSeats.length %}
+  <p class="meta">
+    {% for id in sitting.campusSeats %}{{ id | seatName }}{% if not loop.last %} · {% endif %}{% endfor %}
+  </p>
+  {% endif %}
+  {% if sitting.href %}
+  <p class="actions"><a class="btn btn-quiet" href="{{ sitting.href }}" rel="noopener noreferrer">Open the sitting</a></p>
+  {% endif %}
+  {% if sitting.inferred %}<p class="inferred">Inferred{% if sitting.inferredNote %} · {{ sitting.inferredNote }}{% endif %}</p>{% endif %}
+</li>

@@ -1,0 +1,36 @@
+---
+layout: layout.njk
+title: Docket
+description: Upcoming and past sittings of the Roundtable.
+permalink: /docket/index.html
+---
+
+<p class="kicker">Sittings</p>
+<h1>Docket</h1>
+<p class="lede">What is next. Dated sittings with a host page link out. This page does not sell seats.</p>
+
+<section class="block" aria-labelledby="upcoming-heading">
+  <h2 id="upcoming-heading">Upcoming</h2>
+  {% if upcomingSittings.length == 0 %}
+    {% set emptyTitle = "No sitting is on the docket yet." %}
+    {% set emptyBody = "Upcoming always resolves. When a sitting is dated, it is listed here." %}
+    {% include "empty.njk" %}
+  {% else %}
+    <ul class="register">
+      {% for sitting in upcomingSittings %}
+        {% include "sitting.njk" %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</section>
+
+{% if pastSittings.length > 0 %}
+<section class="block" aria-labelledby="past-heading">
+  <h2 id="past-heading">Sat</h2>
+  <ul class="register">
+    {% for sitting in pastSittings %}
+      {% include "sitting.njk" %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

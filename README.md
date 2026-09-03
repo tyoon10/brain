@@ -1,32 +1,38 @@
-# BRAIN NYC
+# Roundtable
 
-**Business Roundtable for AI & Innovation in NYC**
+**BRAIN** — Business Roundtable for AI & Innovation in NYC.
 
-New York City's cross-school AI alliance — where graduate communities from Columbia, NYU, and Cornell come together to solve real business problems with AI, build cross-disciplinary ventures, and bridge the gap between cutting-edge technology and industry practice.
+This repository is the Roundtable preview. It is not a personal portfolio and it is not twyoon.com.
 
-**Live site:** [brainyc.org](https://brainyc.org)
+Public noun: **Roundtable**. The room is the product. Information is the service.
 
-## Partner Schools
+> New York City, with Yale students joining from New Haven.
 
-- [Columbia Business School](https://business.columbia.edu)
-- [NYU Stern](https://www.stern.nyu.edu)
-- [Cornell Tech](https://www.tech.cornell.edu)
+The door is free. This is not a box office.
 
-## Tech Stack
+## Pages
 
-- **Engine:** [Hugo](https://gohugo.io/) with [HugoBlox](https://hugoblox.com/) (blox-bootstrap/v5)
-- **Hosting:** GitHub Pages via GitHub Actions
-- **Domain:** brainyc.org (Cloudflare DNS)
+- `/` — index (homepage direction is still open)
+- `/offer-book/` — ungated offer book
+- `/docket/` — sittings (upcoming always resolves; host pages link out)
+- `/brief/` — the wire
 
-## Local Development
+## Public data
 
-**Prerequisites:** Hugo Extended, Git, Go 1.21+
+Edit files in `data/`: `events`, `offers`, `programs`, `wire`, `partners`.
+
+Campus-seat colours are data, not the brand. Partners are names as text only. Every record sets `inferred`. Empty folders are valid.
+
+## Develop
 
 ```bash
-hugo server             # Dev server at localhost:1313
-hugo --gc --minify      # Production build
+npm install
+npm run dev          # http://localhost:4321
+npm run ci           # Zod data, copy/kit lint, tests, build
 ```
 
-## License
+Greenfield [Eleventy](https://www.11ty.dev/) static HTML. Zero client JS by default. Visual system: BRAIN kit v2.0 (docket tokens).
 
-All rights reserved. Content and branding are proprietary to BRAIN NYC.
+## Production
+
+GitHub Pages deploy is **not** wired. Do not publish until asked.

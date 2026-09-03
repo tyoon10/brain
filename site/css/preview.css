@@ -1,0 +1,359 @@
+/* BRAIN kit v2.0 — docket tokens.
+   Accent is for actions only. Zero shadows. Radii 0 / 4 / 999. */
+
+:root {
+  --canvas: #f2f3f0;
+  --surface: #e9ebe6;
+  --ink: #1a1c19;
+  --accent: #1e4d45;
+  --on-accent: #f2f3f0;
+  --mute: color-mix(in srgb, var(--ink) 58%, var(--canvas));
+  --rule: color-mix(in srgb, var(--ink) 16%, var(--canvas));
+  --radius-0: 0;
+  --radius-4: 4px;
+  --radius-pill: 999px;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-ui: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --measure: 44rem;
+  --gutter: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #121412;
+    --surface: #1a1c19;
+    --ink: #f2f3f0;
+    --accent: #8fb5ab;
+    --on-accent: #121412;
+    --mute: color-mix(in srgb, var(--ink) 62%, var(--canvas));
+    --rule: color-mix(in srgb, var(--ink) 20%, var(--canvas));
+  }
+}
+
+html {
+  overflow-x: clip;
+  max-width: 100%;
+  background: var(--canvas);
+  color: var(--ink);
+  color-scheme: light dark;
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 106.25%;
+  line-height: 1.55;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  max-width: 100%;
+  overflow-x: clip;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -4rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 0.6rem;
+}
+
+.mast,
+main,
+.colophon {
+  width: min(var(--measure), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+
+.mast {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block: 1.4rem 1.15rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-decoration: none;
+}
+
+.wordmark-public {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.wordmark-legal {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.15rem;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--mute);
+}
+
+nav a[aria-current='page'],
+nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+main {
+  padding-block: 2.25rem 3.5rem;
+}
+
+.kicker {
+  margin: 0 0 0.65rem;
+  color: var(--mute);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+h1 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2.35rem, 6vw, 3.6rem);
+}
+
+h2 {
+  margin: 0 0 0.7rem;
+  font-size: 1.35rem;
+}
+
+.lede,
+.yale,
+.door {
+  max-width: 36rem;
+  margin: 0 0 0.85rem;
+}
+
+.lede {
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.yale,
+.door {
+  color: var(--mute);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.35rem 0 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-4);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--canvas);
+}
+
+.btn:focus-visible {
+  outline-color: var(--accent);
+}
+
+.btn-quiet {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-quiet:hover {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.block {
+  margin-top: 2.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seats li {
+  display: flex;
+  gap: 0.7rem;
+  min-width: 0;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-0);
+  background: var(--surface);
+}
+
+.seats strong,
+.seats span {
+  display: block;
+  min-width: 0;
+}
+
+.seats strong {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+
+.seats span {
+  color: var(--mute);
+  font-size: 0.92rem;
+}
+
+.pip {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: var(--radius-pill);
+}
+
+.register {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.register li {
+  min-width: 0;
+  padding: 1rem 1.05rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-0);
+  background: var(--surface);
+}
+
+.meta {
+  margin: 0 0 0.4rem;
+  color: var(--mute);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.empty {
+  padding: 1.2rem 1.05rem 1.3rem;
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-0);
+  background: var(--surface);
+}
+
+.empty h2 {
+  margin-bottom: 0.4rem;
+}
+
+.empty p {
+  margin: 0;
+  color: var(--mute);
+}
+
+.inferred {
+  margin: 0.65rem 0 0;
+  color: var(--mute);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.colophon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.25rem;
+  padding-block: 1.15rem 2rem;
+  border-top: 1px solid var(--rule);
+  color: var(--mute);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+}
+
+.colophon a {
+  color: inherit;
+}
