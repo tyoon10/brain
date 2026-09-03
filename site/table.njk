@@ -7,24 +7,32 @@ permalink: /table/index.html
 bodyClass: page-table
 ---
 
-<p class="kicker">Direction C · not locked</p>
-<h1>The docket on the table.</h1>
-<p class="lede">Information is the service. Upcoming is empty by design. The past board is populated.</p>
+<div class="deck">
+  <header class="deck-intro">
+    <div>
+      <p class="kicker">Direction C · not locked</p>
+      <h1>The docket on the table.</h1>
+      <p class="lede">Information is the service. The past board is populated. Upcoming is empty by design — and it sits to the side.</p>
+    </div>
+    <p class="actions">
+      <a class="btn" href="/docket/">Full docket</a>
+      <a class="btn btn-quiet" href="/offer-book/">Offer book</a>
+      <a class="btn btn-quiet" href="/brief/">Brief</a>
+    </p>
+  </header>
 
-<div class="table-cloth">
-  <section>
-    <p class="kicker">Upcoming</p>
-    {% if upcomingSittings.length == 0 %}
-      {% set emptyTitle = "No sitting is on the docket yet." %}
-      {% set emptyBody = "Upcoming always resolves. An empty upcoming list is a designed state." %}
-      {% include "empty.njk" %}
-    {% endif %}
-  </section>
-  <section>
-    <p class="kicker">Sat</p>
+  <section class="deck-sittings" aria-labelledby="sat-heading">
+    <div class="section-head">
+      <h2 id="sat-heading">Sat · <span class="tabular">{{ pastSittings.length }}</span></h2>
+      <p class="legend">
+        <span class="chip chip-owned">Owned</span>
+        <span class="chip chip-co-hosted">Co-hosted</span>
+        <span class="chip chip-listed">Listed</span>
+      </p>
+    </div>
     <ol class="docket-lines">
       {% for sitting in pastSittings %}
-      <li>
+      <li class="line line--{{ sitting.relation }}">
         <a href="/docket/{{ sitting.slug }}/">
           <span class="meta">{{ sitting.startsAt | nyDay }} · {{ sitting.relation | relationLabel }}</span>
           <strong>{{ sitting.title }}</strong>
@@ -33,10 +41,10 @@ bodyClass: page-table
       {% endfor %}
     </ol>
   </section>
-</div>
 
-<p class="actions">
-  <a class="btn" href="/docket/">Full docket</a>
-  <a class="btn btn-quiet" href="/offer-book/">Offer book</a>
-  <a class="btn btn-quiet" href="/brief/">Brief</a>
-</p>
+  <aside class="deck-rail">
+    {% set emptyTitle = "No sitting is on the docket yet." %}
+    {% set emptyBody = "Upcoming always resolves. An empty upcoming list is a designed state." %}
+    {% include "empty.njk" %}
+  </aside>
+</div>

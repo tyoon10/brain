@@ -19,11 +19,8 @@
     <a class="skip" href="#content">Skip to content</a>
     <header class="mast">
       <a class="brand" href="/">
-        <span class="mark-slot" aria-hidden="true"></span>
-        <span class="wordmark">
-          <span class="wordmark-public">{{ site.publicName }}</span>
-          <span class="wordmark-legal">{{ site.legalName }}</span>
-        </span>
+        <span class="wordmark-public">{{ site.publicName }}</span>
+        <span class="wordmark-legal">{{ site.legalName }}</span>
       </a>
       <nav aria-label="{{ site.publicName }}">
         {% for item in site.nav %}
@@ -54,10 +51,7 @@
           <a href="/door/">Door</a>
         </p>
       </div>
-      <p>
-        <a href="/sitemap/">43 pages · 12 sections</a>
-        · <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      </p>
+      <p><a href="/sitemap/">43 pages · 12 sections</a></p>
     </footer>
   </body>
 </html>

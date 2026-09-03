@@ -7,7 +7,7 @@ Source of truth for this Roundtable preview. Each folder is a Zod collection.
 | `events` | Sittings on the docket |
 | `offers` | Offer book (ungated) |
 | `benefits` | Member-benefit ledger |
-| `programs` | Campus seats — colours live here as data |
+| `programs` | Campus seats — school, program, one line; colours as data |
 | `campus-programs` | Six campus program rows |
 | `wire` | Briefs (industry + campus) |
 | `labs` | Nine-lab watchlist |

@@ -9,16 +9,9 @@ permalink: /seats/index.html
   <h1>CBS, Stern, Cornell Tech, Yale SOM.</h1>
   <p class="lede">{{ site.yaleLine }}</p>
 </header>
-<ul class="seats">
-  {% for school in programs %}
-  <li>
-    <span class="swatch" data-seat="{{ school.id }}"></span>
-    <div>
-      <strong><a href="/seats/{{ school.id }}/">{{ school.shortName }}</a></strong>
-      <span>{{ school.name }}</span>
-      <span>{{ school.sittingFrom }}</span>
-    </div>
-  </li>
+<ul class="seats seats--row">
+  {% for seat in programs %}
+    {% include "seat-card.njk" %}
   {% endfor %}
 </ul>
 <p class="actions">

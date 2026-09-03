@@ -7,49 +7,49 @@ permalink: /map/index.html
 bodyClass: page-map
 ---
 
-<p class="kicker">Direction B · not locked</p>
-<h1>Local-first, in the city.</h1>
-<p class="lede">{{ site.yaleLine }}</p>
+<div class="deck">
+  <header class="deck-intro">
+    <div>
+      <p class="kicker">Direction B · not locked</p>
+      <h1>Local-first, in the city.</h1>
+      <p class="lede">{{ site.yaleLine }}</p>
+    </div>
+    <p class="actions">
+      <a class="btn" href="/docket/">Docket</a>
+      <a class="btn btn-quiet" href="/room/">Room</a>
+      <a class="btn btn-quiet" href="/table/">Table</a>
+    </p>
+  </header>
 
-<div class="city-map">
-  <svg viewBox="0 0 720 460" role="img" aria-label="Campus seats in New York City, Yale joining from New Haven">
-    <rect x="20" y="20" width="430" height="420" fill="var(--surface)" stroke="currentColor" stroke-width="1"/>
-    <text x="40" y="56" font-size="13" font-family="IBM Plex Mono, monospace" fill="currentColor">New York City</text>
-    <a href="/seats/cbs/">
-      <circle cx="128" cy="168" r="11" fill="#2b62a8"/>
-      <text x="148" y="174" font-size="18" font-family="Source Serif 4, serif" fill="currentColor">CBS</text>
-    </a>
-    <a href="/seats/stern/">
-      <circle cx="214" cy="248" r="11" fill="#57068c"/>
-      <text x="234" y="254" font-size="18" font-family="Source Serif 4, serif" fill="currentColor">Stern</text>
-    </a>
-    <a href="/seats/cornell-tech/">
-      <circle cx="312" cy="132" r="11" fill="#b31b1b"/>
-      <text x="332" y="138" font-size="18" font-family="Source Serif 4, serif" fill="currentColor">Cornell Tech</text>
-    </a>
-    <line x1="450" y1="230" x2="548" y2="230" stroke="currentColor" stroke-dasharray="5 5"/>
-    <rect x="548" y="20" width="152" height="420" fill="var(--canvas)" stroke="currentColor" stroke-width="1"/>
-    <text x="564" y="56" font-size="13" font-family="IBM Plex Mono, monospace" fill="currentColor">New Haven</text>
-    <a href="/seats/yale-som/">
-      <circle cx="624" cy="230" r="11" fill="#00356b"/>
-      <text x="564" y="268" font-size="18" font-family="Source Serif 4, serif" fill="currentColor">Yale SOM</text>
-    </a>
-  </svg>
-  <p class="yale">{{ site.yaleLine }}</p>
+  <div class="city-map">
+    <div class="plate plate-nyc">
+      <p class="kicker">New York City</p>
+      <ul class="pins">
+        {% for seat in programs %}
+          {% if seat.id != 'yale-som' %}
+          <li>
+            <a href="/seats/{{ seat.id }}/">
+              <span class="swatch" data-seat="{{ seat.id }}"></span>
+              <span class="seat-school">{{ seat.school }}</span>
+              <strong>{{ seat.shortName }}</strong>
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="plate plate-haven">
+      <p class="kicker">New Haven</p>
+      {% for seat in programs %}
+        {% if seat.id == 'yale-som' %}
+        <a class="pin-yale" href="/seats/{{ seat.id }}/">
+          <span class="swatch" data-seat="{{ seat.id }}"></span>
+          <span class="seat-school">{{ seat.school }}</span>
+          <strong>{{ seat.shortName }}</strong>
+          <span class="seat-line">{{ seat.sittingFrom }}</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 </div>
-
-<ol class="register">
-  {% for seat in programs %}
-  <li>
-    <p class="meta">Campus seat</p>
-    <h2><a href="/seats/{{ seat.id }}/">{{ seat.name }}</a></h2>
-    <p>{{ seat.sittingFrom }}</p>
-  </li>
-  {% endfor %}
-</ol>
-
-<p class="actions">
-  <a class="btn" href="/docket/">Docket</a>
-  <a class="btn btn-quiet" href="/room/">Room</a>
-  <a class="btn btn-quiet" href="/table/">Table</a>
-</p>

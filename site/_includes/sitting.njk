@@ -1,4 +1,4 @@
-<article class="sitting sitting--{{ sitting.relation }}">
+<article class="sitting sitting--{{ sitting.relation }}{% if compactSitting %} sitting--compact{% endif %}">
   <div class="sitting-band" aria-hidden="true"></div>
   <div class="sitting-body">
     <p class="meta">
@@ -19,7 +19,7 @@
       {% endfor %}
       {% endif %}
     </p>
-    {% if sitting.href %}
+    {% if sitting.href and not compactSitting %}
     <p>
       <a class="text-link" href="{{ sitting.href }}" rel="noopener noreferrer">Register on the host site</a>
       <span class="mute"> · outbound</span>

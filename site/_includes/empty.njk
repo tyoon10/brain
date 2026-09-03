@@ -1,6 +1,7 @@
 {% set emptyTitle = emptyTitle or "No sitting is on the docket yet." %}
 {% set emptyBody = emptyBody or "When a sitting is dated, it appears here. The upcoming list always resolves — an empty docket is a designed state, not an error." %}
 <div class="empty">
-  <h2>{{ emptyTitle }}</h2>
+  <p class="kicker">Upcoming</p>
+  <p class="empty-title">{{ emptyTitle }}</p>
   <p>{{ emptyBody }}</p>
 </div>

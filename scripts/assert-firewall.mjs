@@ -56,7 +56,7 @@ for (const file of walk(root)) {
 }
 
 if (hits > 0) {
-  console.error(`\n${hits} firewall hit(s). Marks are names in type, or an empty reserved slot.`);
+  console.error(`\n${hits} firewall hit(s). Marks are names in type.`);
   process.exit(1);
 }
 

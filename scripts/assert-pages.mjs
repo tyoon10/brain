@@ -1,4 +1,4 @@
-import { readdirSync, existsSync } from 'node:fs';
+import { readdirSync, existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const dist = join(import.meta.dirname, '..', '_site');
@@ -54,6 +54,48 @@ if (missing.length) {
   console.error('Missing required routes:');
   for (const path of missing) console.error(`  ${path}`);
   process.exit(1);
+}
+
+const home = readFileSync(join(dist, 'index.html'), 'utf8');
+if (home.includes('mark-slot')) {
+  console.error('Homepage still has an empty mark slot.');
+  process.exit(1);
+}
+if (publicPages.some((file) => /contact@brainyc\.org/i.test(readFileSync(file, 'utf8')))) {
+  console.error('Unverified mailbox printed on a public page.');
+  process.exit(1);
+}
+
+const claimed = [
+  '/',
+  '/room/',
+  '/map/',
+  '/table/',
+  '/sitemap/',
+  '/docket/',
+  '/offer-book/',
+  '/brief/',
+  '/benefits/',
+  '/programs/',
+  '/labs/',
+  '/freshness/',
+  '/seats/',
+  '/door/',
+];
+const homeNav = home;
+for (const href of ['/room/', '/map/', '/table/', '/docket/', '/offer-book/', '/brief/', '/benefits/', '/sitemap/']) {
+  if (!homeNav.includes(`href="${href}"`)) {
+    console.error(`Primary nav missing ${href}`);
+    process.exit(1);
+  }
+}
+for (const href of claimed) {
+  if (href === '/') continue;
+  const file = join(dist, href.replace(/^\//, ''), 'index.html');
+  if (!existsSync(file)) {
+    console.error(`Claimed route missing: ${href}`);
+    process.exit(1);
+  }
 }
 
 console.log(`Public HTML count: ${publicPages.length} (404 excluded).`);

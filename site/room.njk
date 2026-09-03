@@ -7,40 +7,43 @@ permalink: /room/index.html
 bodyClass: page-room
 ---
 
-<p class="kicker">Direction A · not locked</p>
-<h1>The room is the product.</h1>
-<p class="lede">Four campus seats. One table. {{ site.yaleLine }}</p>
+<div class="deck">
+  <header class="deck-intro">
+    <div>
+      <p class="kicker">Direction A · not locked</p>
+      <h1>The room is the product.</h1>
+      <p class="lede">Four campus seats. One table. {{ site.yaleLine }}</p>
+    </div>
+    <p class="actions">
+      <a class="btn" href="/docket/">Docket</a>
+      <a class="btn btn-quiet" href="/map/">Map</a>
+      <a class="btn btn-quiet" href="/table/">Table</a>
+    </p>
+  </header>
 
-<div class="room-stage" aria-hidden="true">
-  <div class="room-ring">
-    {% for seat in programs %}
-    <a class="room-chair room-chair--{{ loop.index }}" href="/seats/{{ seat.id }}/">
-      <span class="swatch" data-seat="{{ seat.id }}"></span>
-      {{ seat.shortName }}
-    </a>
-    {% endfor %}
-    <div class="room-table">
-      <p class="kicker">The table</p>
-      <p>Roundtable</p>
+  <div class="deck-stage">
+    <div class="room-stage">
+      <div class="room-ring">
+        {% for seat in programs %}
+        <a class="room-chair room-chair--{{ loop.index }}" href="/seats/{{ seat.id }}/">
+          <span class="swatch" data-seat="{{ seat.id }}"></span>
+          <span class="seat-school">{{ seat.school }}</span>
+          <span>{{ seat.shortName }}</span>
+        </a>
+        {% endfor %}
+        <div class="room-table">
+          <p class="kicker">The table</p>
+          <p>Roundtable</p>
+        </div>
+      </div>
     </div>
   </div>
+
+  <section class="span-12">
+    <ul class="seats seats--row">
+      {% for seat in programs %}
+        {% include "seat-card.njk" %}
+      {% endfor %}
+    </ul>
+  </section>
 </div>
-
-<ul class="seats">
-  {% for seat in programs %}
-  <li>
-    <span class="swatch" data-seat="{{ seat.id }}"></span>
-    <div>
-      <strong><a href="/seats/{{ seat.id }}/">{{ seat.shortName }}</a></strong>
-      <span>{{ seat.name }}</span>
-      <span>{{ seat.sittingFrom }}</span>
-    </div>
-  </li>
-  {% endfor %}
-</ul>
-
-<p class="actions">
-  <a class="btn" href="/docket/">Docket</a>
-  <a class="btn btn-quiet" href="/map/">Map</a>
-  <a class="btn btn-quiet" href="/table/">Table</a>
-</p>

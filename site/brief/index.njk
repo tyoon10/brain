@@ -15,7 +15,7 @@ bodyClass: page-brief
 </header>
 <div class="wire">
   <section>
-    <h2>Industry · {{ industryWire.length }}</h2>
+    <h2 class="wire-lane">Industry · {{ industryWire.length }}</h2>
     {% for item in industryWire %}
     <article class="wire-item{% if item.held %} wire-held{% endif %}">
       <p class="meta">
@@ -36,7 +36,7 @@ bodyClass: page-brief
     {% endfor %}
   </section>
   <section>
-    <h2>Campus · {{ campusWire.length }}</h2>
+    <h2 class="wire-lane">Campus · {{ campusWire.length }}</h2>
     {% for item in campusWire %}
     <article class="wire-item">
       <p class="meta"><time datetime="{{ item.publishedAt | isoDay }}">{{ item.publishedAt | isoDay }}</time></p>

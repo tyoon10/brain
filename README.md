@@ -16,7 +16,7 @@ Question 12 (homepage direction) is still open. `/` chooses among `/room/`, `/ma
 
 43 public pages in 12 sections. Start at `/sitemap/`.
 
-- `/` — chooser
+- `/` — home (sittings, offer book, brief; three directions still open)
 - `/room/`, `/map/`, `/table/` — three homepage directions
 - `/docket/` — sittings (upcoming always resolves; host pages link out)
 - `/offer-book/` — ungated offer book

@@ -4,22 +4,23 @@ Canonical preview for **https://github.com/tyoon10/brain** only. Do not merge. D
 
 ## Visual system
 
-BRAIN kit **v2.0 (“docket”)** is the locked token set: canvas `#f2f3f0` / dark `#121412`, surface `#e9ebe6`, ink `#1a1c19`, accent `#1e4d45` (actions only; dark `#8fb5ab`). Type: Source Serif 4 for display and body, IBM Plex Sans for UI, IBM Plex Mono for dates and chips. Radii 0 / 4 / 999. Zero shadows.
+BRAIN kit **v2.0 (“docket”)** is the locked token set: canvas `#f2f3f0` / dark `#121412`, surface `#e9ebe6`, ink `#1a1c19`, accent `#1e4d45` (actions only; dark `#8fb5ab`). Type: Source Serif 4 for display and body, IBM Plex Sans for UI, IBM Plex Mono for dates and chips. Tabular numerals on dates and figures. Radii 0 / 4 / 999. Zero shadows.
+
+The shell is a 12-column grid that uses the viewport. Prose measure is for prose only. Wordmark is type: Roundtable + BRAIN. No mark box. No contact address.
 
 This is **not** Parchment & Navy, **not** twyoon.com, and **not** the retired Hugo Alliance landing page.
 
 ## Homepage direction (Question 12)
 
-Still **open**. `/` is a chooser. `/room/`, `/map/`, and `/table/` are first-class homepage directions. Table is the Roundtable cloth.
+Still **open**. `/` leads with the 11 sittings, the offer book, and the two-lane brief. `/room/`, `/map/`, and `/table/` are first-class homepage directions. Empty upcoming is a designed rail, not the hero.
 
 ## What a reviewer should click
 
+- `/` — dense home: sittings, wire, offers, time-to-value
+- `/room/`, `/map/`, `/table/`
 - Atlas `/sitemap/` — 43 pages in 12 sections
-- Docket `/docket/` — designed empty upcoming + 11 past sittings (owned / co-hosted / listed)
-- Offer book `/offer-book/` — 8 offers verified 2026-08-18
-- Brief `/brief/` — 20-post two-lane wire; GLM held
-- Benefits `/benefits/` — 19 rows, four time-to-value tiers
-- Programs, labs, freshness, seats, door
+- Docket `/docket/` — 11 past sittings; upcoming empty to the side
+- Offer book, brief, benefits, programs, labs, freshness, seats, door
 
 Public copy is Roundtable lexicon. Names as type. No partner marks. Register links out. Eligibility inferred is marked inferred. Wispr door is `https://wisprflow.ai/students`.
 

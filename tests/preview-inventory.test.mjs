@@ -44,6 +44,14 @@ test('Wispr door is the student page, not a referral URL', () => {
   assert.equal(wispr.href, 'https://wisprflow.ai/students');
 });
 
+test('campus seat cards have three distinct lines', () => {
+  for (const seat of loadCollection('programs')) {
+    const lines = [seat.school, seat.shortName, seat.sittingFrom];
+    assert.equal(new Set(lines).size, 3, `${seat.id} repeats a card line`);
+    assert.notEqual(seat.school, seat.name);
+  }
+});
+
 test('every sitting marks eligibility inferred and links out', () => {
   for (const sitting of loadCollection('events')) {
     assert.equal(sitting.eligibilityInferred, true);
