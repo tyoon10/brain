@@ -12,6 +12,7 @@ export default {
     { href: '/docket/', label: 'Docket' },
     { href: '/offer-book/', label: 'Offer book' },
     { href: '/brief/', label: 'Brief' },
+    { href: '/newsletter/', label: 'Newsletter' },
     { href: '/benefits/', label: 'Benefits' },
     { href: '/programs/', label: 'Programs' },
     { href: '/labs/', label: 'Labs' },

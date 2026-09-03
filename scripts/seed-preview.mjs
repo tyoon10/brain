@@ -240,23 +240,23 @@ const sittingNotices = events.map((event) => ({
   inferred: false,
 }));
 
-const industry = [
-  { slug: 'gpt-5-6-sol', title: 'GPT-5.6 Sol cut', publishedAt: '2026-08-21', summary: 'GPT-5.6 Sol cut.', lane: 'industry', held: false, inferred: false },
-  { slug: 'stripe-openrouter', title: 'Stripe–OpenRouter announced', publishedAt: '2026-08-19', summary: 'Announced. Reported >$7bn, terms undisclosed.', lane: 'industry', held: false, inferred: false },
-  { slug: 'anthropic-decart', title: 'Anthropic–Decart', publishedAt: '2026-08-29', summary: '~$6bn reported only.', lane: 'industry', held: false, inferred: true, inferredNote: 'Announcement day was not in the brief; recorded against the 2026-08-29 as-of.' },
-  { slug: 'spacex-cursor', title: 'SpaceX–Cursor stock', publishedAt: '2026-06-16', summary: '$60bn stock announced.', lane: 'industry', held: false, inferred: false },
-  { slug: 'cursor-student-closed', title: 'Cursor student rate closed', publishedAt: '2026-06-25', summary: 'Student discount closed.', lane: 'industry', held: false, inferred: false },
-  { slug: 'spacex-xai', title: 'SpaceX–xAI closed', publishedAt: '2026-02-02', summary: 'Closed.', lane: 'industry', held: false, inferred: false },
-  { slug: 'glm-held', title: 'GLM version', publishedAt: '2026-08-29', summary: 'Held.', lane: 'industry', held: true, inferred: false },
-];
-
 const campusExtra = [
   { slug: 'claude-campus-closed', title: 'Claude Campus closed', publishedAt: '2026-08-29', summary: 'Closed. Spring 2026 in session.', lane: 'campus', held: false, inferred: false },
   { slug: 'osc-closed', title: 'OpenAI Student Collective closed', publishedAt: '2026-08-10', summary: 'Closed. Undergrad-only.', lane: 'campus', held: false, inferred: false },
+  {
+    slug: 'cursor-student-closed',
+    title: 'Cursor student rate closed',
+    publishedAt: '2026-06-25',
+    summary: 'Cursor’s student rate closed on 25 June. The notice sits on the campus lane; it is not an industry release, acquisition, investment, or partnership.',
+    lane: 'campus',
+    held: false,
+    inferred: false,
+  },
 ];
 
-const wire = [...industry, ...sittingNotices, ...campusExtra];
-if (wire.length !== 20) throw new Error(`wire count ${wire.length}`);
-for (const row of wire) dump('wire', row.slug, row);
+const campusWire = [...sittingNotices, ...campusExtra];
+for (const row of campusWire) dump('wire', row.slug, row);
 
-console.log(`seeded events ${events.length} offers ${offers.length} benefits ${benefits.length} programs ${campusPrograms.length} labs ${labs.length} mechanisms ${mechanisms.length} wire ${wire.length}`);
+console.log(
+  `seeded events ${events.length} offers ${offers.length} benefits ${benefits.length} programs ${campusPrograms.length} labs ${labs.length} mechanisms ${mechanisms.length} campus-wire ${campusWire.length} (industry wire is hand-authored; this seed does not overwrite it)`,
+);

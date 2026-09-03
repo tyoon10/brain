@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: Atlas
-description: Forty-three public pages in twelve sections.
+description: Forty-four public pages in twelve sections.
 permalink: /sitemap/index.html
 eleventyNavigation:
   key: Sitemap
@@ -9,7 +9,7 @@ eleventyNavigation:
 bodyClass: page-atlas
 ---
 <header class="page-hero">
-  <p class="kicker">Atlas · 12 sections · 43 pages</p>
+  <p class="kicker">Atlas · 12 sections · 44 pages</p>
   <h1>The Roundtable, mapped.</h1>
   <p class="lede">Every public route in this preview. Information architecture — not four empty doors.</p>
 </header>
@@ -57,10 +57,11 @@ bodyClass: page-atlas
   <section>
     <h2>6. Brief</h2>
     <ol>
-      <li><a href="/brief/">Two-lane wire</a> — twenty posts; GLM held.</li>
+      <li><a href="/brief/">Two-lane wire</a> — industry (releases, acquisitions, investments, partnerships) and campus; GLM held.</li>
       {% for item in briefPages %}
       <li><a href="/brief/{{ item.slug }}/">{{ item.title }}</a></li>
       {% endfor %}
+      <li><a href="/newsletter/">Newsletter</a> — no issues yet. The Roundtable brief will land here.</li>
     </ol>
   </section>
   <section>

@@ -788,6 +788,13 @@ h3 {
   border-color: var(--ink);
 }
 
+.chip-release,
+.chip-acquisition,
+.chip-investment,
+.chip-partnership {
+  background: var(--surface);
+}
+
 .chip-open {
   background: var(--surface);
 }

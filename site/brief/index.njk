@@ -1,7 +1,7 @@
 ---
 layout: layout.njk
 title: Brief
-description: Twenty posts on two lanes. GLM version held.
+description: Industry and campus lanes. GLM version held.
 permalink: /brief/index.html
 eleventyNavigation:
   key: Brief
@@ -9,40 +9,25 @@ eleventyNavigation:
 bodyClass: page-brief
 ---
 <header class="page-hero">
-  <p class="kicker">Brief · twenty posts · two lanes</p>
+  <p class="kicker">Brief · {{ wire.length }} posts · two lanes</p>
   <h1>Industry on the left. Campus on the right.</h1>
-  <p class="lede">GLM version held. Reported figures stay reported. Terms undisclosed stay undisclosed.</p>
+  <p class="lede">Industry covers releases, acquisitions, investments, and partnerships from 3 March through 3 September 2026. GLM version held. Reported figures stay reported. Terms undisclosed stay undisclosed.</p>
 </header>
 <div class="wire">
   <section>
     <h2 class="wire-lane">Industry · {{ industryWire.length }}</h2>
     {% for item in industryWire %}
-    <article class="wire-item{% if item.held %} wire-held{% endif %}">
-      <p class="meta">
-        <time datetime="{{ item.publishedAt | isoDay }}">{{ item.publishedAt | isoDay }}</time>
-        {% if item.held %}<span class="chip chip-held">Held</span>{% endif %}
-        {% if item.inferred %}<span class="chip chip-inferred">Inferred</span>{% endif %}
-      </p>
-      <h3>
-        {% if item.slug | hasBriefPage %}
-        <a href="/brief/{{ item.slug }}/">{{ item.title }}</a>
-        {% else %}
-        {{ item.title }}
-        {% endif %}
-      </h3>
-      <p>{{ item.summary }}</p>
-      {% if item.inferredNote %}<p class="inferred">{{ item.inferredNote }}</p>{% endif %}
-    </article>
+    {% set showNotes = true %}
+    {% set showSource = true %}
+    {% include "wire-item.njk" %}
     {% endfor %}
   </section>
   <section>
     <h2 class="wire-lane">Campus · {{ campusWire.length }}</h2>
     {% for item in campusWire %}
-    <article class="wire-item">
-      <p class="meta"><time datetime="{{ item.publishedAt | isoDay }}">{{ item.publishedAt | isoDay }}</time></p>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.summary }}</p>
-    </article>
+    {% set showNotes = false %}
+    {% set showSource = false %}
+    {% include "wire-item.njk" %}
     {% endfor %}
   </section>
 </div>

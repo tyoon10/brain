@@ -49,10 +49,10 @@ const mechanisms = orderBySlug(loadCollection('mechanisms'), [
 const partners = loadCollection('partners');
 
 const briefPageSlugs = [
-  'gpt-5-6-sol',
+  'gpt-5-6',
   'stripe-openrouter',
   'spacex-cursor',
-  'cursor-student-closed',
+  'nvidia-hugging-face',
   'glm-held',
 ];
 const briefPages = briefPageSlugs
@@ -146,6 +146,14 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('hasBriefPage', (slug) => briefPageSlugs.includes(slug));
+
+  eleventyConfig.addFilter('categoryLabel', (category) => {
+    if (category === 'release') return 'Release';
+    if (category === 'acquisition') return 'Acquisition';
+    if (category === 'investment') return 'Investment';
+    if (category === 'partnership') return 'Partnership';
+    return category || '';
+  });
 
   return {
     dir: {

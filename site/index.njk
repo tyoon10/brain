@@ -83,22 +83,15 @@ bodyClass: page-home
       <section>
         <h3 class="wire-lane">Industry · <span class="tabular">{{ industryWire.length }}</span></h3>
         {% for item in industryWire %}
-        <article class="wire-item{% if item.held %} wire-held{% endif %}">
-          <p class="meta">
-            <time datetime="{{ item.publishedAt | isoDay }}">{{ item.publishedAt | isoDay }}</time>
-            {% if item.held %}<span class="chip chip-held">Held</span>{% endif %}
-            {% if item.inferred %}<span class="chip chip-inferred">Inferred</span>{% endif %}
-          </p>
-          <h3>
-            {% if item.slug | hasBriefPage %}
-            <a href="/brief/{{ item.slug }}/">{{ item.title }}</a>
-            {% else %}
-            {{ item.title }}
-            {% endif %}
-          </h3>
-          <p>{{ item.summary }}</p>
-        </article>
+        {% if loop.index0 < 8 %}
+        {% set showNotes = false %}
+        {% set showSource = false %}
+        {% include "wire-item.njk" %}
+        {% endif %}
         {% endfor %}
+        {% if industryWire.length > 8 %}
+        <p><a class="text-link" href="/brief/">All {{ industryWire.length }} industry posts</a></p>
+        {% endif %}
       </section>
       <section>
         <h3 class="wire-lane">Campus · <span class="tabular">{{ campusWire.length }}</span></h3>

@@ -14,13 +14,14 @@ Question 12 (homepage direction) is still open. `/` chooses among `/room/`, `/ma
 
 ## Pages
 
-43 public pages in 12 sections. Start at `/sitemap/`.
+44 public pages in 12 sections. Start at `/sitemap/`.
 
 - `/` — home (sittings, offer book, brief; three directions still open)
 - `/room/`, `/map/`, `/table/` — three homepage directions
 - `/docket/` — sittings (upcoming always resolves; host pages link out)
 - `/offer-book/` — ungated offer book
-- `/brief/` — two-lane wire
+- `/brief/` — two-lane wire (industry categories + campus)
+- `/newsletter/` — holding page; no issues yet
 - `/benefits/` — member-benefit ledger
 - `/programs/`, `/labs/`, `/freshness/`, `/seats/`, `/door/`
 
@@ -33,7 +34,7 @@ Edit files in `data/`. Campus-seat colours are data, not the brand. Partners are
 ```bash
 npm install
 npm run dev          # http://localhost:4321
-npm run ci           # Zod data, copy/kit lint, tests, firewall, build, 43-page count
+npm run ci           # Zod data, copy/kit lint, tests, firewall, build, 44-page count
 npm run check:links  # HEAD/GET http(s) hrefs on the four public pages
 ```
 

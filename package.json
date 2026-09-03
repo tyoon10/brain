@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "eleventy --serve --port 4321",
-    "build": "eleventy",
+    "build": "rm -rf _site && eleventy",
     "validate": "node scripts/validate.mjs",
     "lint:copy": "node scripts/lint-copy.mjs",
     "test": "node --test tests/*.test.mjs",

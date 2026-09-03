@@ -2,7 +2,7 @@ import { readdirSync, existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const dist = join(import.meta.dirname, '..', '_site');
-const expected = 43;
+const expected = 44;
 
 if (!existsSync(dist)) {
   console.error('_site/ missing. Run npm run build first.');
@@ -38,6 +38,7 @@ const required = [
   '/docket/upcoming/index.html',
   '/offer-book/index.html',
   '/brief/index.html',
+  '/newsletter/index.html',
   '/benefits/index.html',
   '/programs/index.html',
   '/labs/index.html',
@@ -45,6 +46,8 @@ const required = [
   '/seats/index.html',
   '/door/index.html',
   '/brief/glm-held/index.html',
+  '/brief/gpt-5-6/index.html',
+  '/brief/nvidia-hugging-face/index.html',
   '/offer-book/wispr-flow/index.html',
   '/seats/yale-som/index.html',
 ];
@@ -75,6 +78,7 @@ const claimed = [
   '/docket/',
   '/offer-book/',
   '/brief/',
+  '/newsletter/',
   '/benefits/',
   '/programs/',
   '/labs/',
@@ -83,7 +87,7 @@ const claimed = [
   '/door/',
 ];
 const homeNav = home;
-for (const href of ['/room/', '/map/', '/table/', '/docket/', '/offer-book/', '/brief/', '/benefits/', '/sitemap/']) {
+for (const href of ['/room/', '/map/', '/table/', '/docket/', '/offer-book/', '/brief/', '/newsletter/', '/benefits/', '/sitemap/']) {
   if (!homeNav.includes(`href="${href}"`)) {
     console.error(`Primary nav missing ${href}`);
     process.exit(1);
