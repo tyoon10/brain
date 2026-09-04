@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { loadCollection } from '../lib/load.mjs';
+import { loadCollection, listEntryFiles } from '../lib/load.mjs';
 import { past, upcoming } from '../lib/upcoming.mjs';
 import { wireSchema } from '../lib/schemas.mjs';
 
@@ -82,8 +82,10 @@ test('industry wire is categorized, in-window, and archived stubs stay unloaded'
   assert.equal(slugs.has('amazon-openai-partnership'), false);
   assert.ok(existsSync(join(root, 'data', 'wire-archive', 'spacex-xai.yml')));
   assert.ok(existsSync(join(root, 'data', 'wire', 'SOURCES.md')));
+  assert.ok(existsSync(join(root, 'data', 'wire', 'CRITERIA.md')));
+  assert.ok(existsSync(join(root, 'data', 'events', 'FEATURED.md')));
   assert.equal(
-    wire.some((item) => item._file?.endsWith('SOURCES.md')),
+    wire.some((item) => item._file?.endsWith('SOURCES.md') || item._file?.endsWith('CRITERIA.md')),
     false,
   );
 
@@ -152,4 +154,15 @@ test('every sitting marks eligibility inferred and links out', () => {
     assert.match(sitting.href, /^https:\/\//);
     assert.match(sitting.relation, /^(owned|co-hosted|listed)$/);
   }
+});
+
+test('featured flags stay off until a coming-week issue needs them', () => {
+  const events = loadCollection('events');
+  assert.equal(events.filter((item) => item.featured).length, 0);
+  assert.equal(
+    events.some((item) => item._file?.endsWith('FEATURED.md')),
+    false,
+  );
+  const skipped = listEntryFiles('events').concat(listEntryFiles('wire'));
+  assert.equal(skipped.some((file) => /(?:SOURCES|CRITERIA|FEATURED|README)\.md$/.test(file)), false);
 });

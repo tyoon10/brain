@@ -1,0 +1,23 @@
+{
+  "decision": "exclude",
+  "lane": "featured-event",
+  "category": null,
+  "confidence": 0.95,
+  "reasons": [
+    "(a) not in coming week — starts 2026-02-28, issue date 2026-09-04; past events are never featured",
+    "(b) audience relevance would have been yes (NYC, Mistral host)",
+    "(c) major AI host named (Mistral) but window fails"
+  ],
+  "matchedKeywords": ["mistral", "hackathon", "nyc"],
+  "failedChecks": ["coming-week"],
+  "draft": {
+    "slug": "mistral-hackathon-nyc",
+    "title": "Mistral AI Worldwide Hackathon — New York",
+    "summary": "Past sitting. Not a newsletter feature.",
+    "startsAt": "2026-02-28T09:00:00-05:00",
+    "location": "Verci Flatiron, New York",
+    "href": "https://luma.com/mistralhack-newyork",
+    "inferred": false,
+    "featured": false
+  }
+}

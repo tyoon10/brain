@@ -48,7 +48,7 @@ Twitter/X threads, Substack rumor posts, unnamed “people familiar” without a
 
 ## How to add an item
 
-1. Confirm category + date in window policy (or note if evergreen).
+1. Confirm category + date in window policy (or note if evergreen). Confirm it clears `CRITERIA.md`.
 2. Prefer primary `href`; else Tier A with `inferred` / reported note as the schema requires.
 3. Add `data/wire/<slug>.yml` with `slug`, `title`, `publishedAt`, `summary`, `lane: industry`, `category`, `held`, `inferred`, optional `href` / `inferredNote`.
 4. Run `npm run ci`.
@@ -56,6 +56,8 @@ Twitter/X threads, Substack rumor posts, unnamed “people familiar” without a
 
 ## Cadence (owned by BRAIN-signal)
 
-- Weekly: scan the primary list; draft YAML for anything that clears the bar.
+- Weekly: scan the primary list; draft YAML for anything that clears the bar in `CRITERIA.md`.
 - As-needed: Tier A alerts on mega-deals / mega-rounds.
 - Never auto-publish to production. Draft → stamp → commit.
+
+Significance bar: `CRITERIA.md`. Cadence and source list stay in this file. Luna triage (draft proposals only): `ops/triage/README.md`.

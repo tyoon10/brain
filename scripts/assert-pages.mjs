@@ -59,6 +59,11 @@ if (missing.length) {
   process.exit(1);
 }
 
+if (existsSync(join(dist, 'ops'))) {
+  console.error('ops/ leaked into _site. Triage is internal.');
+  process.exit(1);
+}
+
 const home = readFileSync(join(dist, 'index.html'), 'utf8');
 if (home.includes('mark-slot')) {
   console.error('Homepage still has an empty mark slot.');

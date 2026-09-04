@@ -14,3 +14,9 @@ Thumbs.db
 # Local env
 .env
 .env.*
+
+# Luna triage drafts (never auto-commit into data/)
+ops/triage/inbox/*
+!ops/triage/inbox/.gitkeep
+ops/triage/out/proposals/*
+!ops/triage/out/proposals/.gitkeep

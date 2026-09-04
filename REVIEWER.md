@@ -38,7 +38,7 @@ CI validates and builds. It does not deploy.
 
 ## Industry brief data source
 
-`data/wire/` is the live brief. Industry items cover 2026-03-03 through 2026-09-03 and require `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit `category`. `data/wire-archive/` is not loaded. `data/newsletters/` is empty; `/newsletter/` is a designed holding page with no issues. How the industry brief is sourced: `data/wire/SOURCES.md`.
+`data/wire/` is the live brief. Industry items cover 2026-03-03 through 2026-09-03 and require `category`: `release`, `acquisition`, `investment`, or `partnership`. Campus items may omit `category`. `data/wire-archive/` is not loaded. `data/newsletters/` is empty; `/newsletter/` is a designed holding page with no issues. How the industry brief is sourced: `data/wire/SOURCES.md`. Significance bar: `data/wire/CRITERIA.md`. Featured local events criteria live in `data/events/FEATURED.md`. Weekly Luna sweep (curator + screener, drafts only): `ops/triage/README.md`.
 
 To add a wire item:
 
@@ -49,4 +49,6 @@ To add a wire item:
 5. Do not invent closed deals, prices, or contact info. Talks stay talks. GLM stays `held: true` with no version number.
 6. Optional: add the slug to `briefPageSlugs` in `eleventy.config.js` for a detail page (that changes the public page count).
 7. Run `npm run validate` then `npm run ci`. If you add a public route, update `scripts/assert-pages.mjs`.
+
+Luna runs a weekly curation sweep. Proposals land under `ops/triage/out/proposals/` and never write `data/`. Dry-run: `npm run triage`. Weekly inbox: `OPENAI_API_KEY=… node ops/triage/run.mjs --inbox ops/triage/inbox`.
 

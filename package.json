@@ -17,7 +17,8 @@
     "assert:firewall": "node scripts/assert-firewall.mjs",
     "assert:pages": "node scripts/assert-pages.mjs",
     "check:links": "node scripts/check-outbound-links.mjs",
-    "ci": "npm run validate && npm run lint:copy && npm test && npm run assert:firewall && npm run build && npm run lint:copy -- --built && npm run assert:html && npm run assert:pages && npm run assert:firewall"
+    "triage": "node ops/triage/run.mjs --fixture",
+    "ci": "npm run validate && npm run lint:copy && npm test && npm run triage && npm run assert:firewall && npm run build && npm run lint:copy -- --built && npm run assert:html && npm run assert:pages && npm run assert:firewall"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

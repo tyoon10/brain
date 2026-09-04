@@ -1,4 +1,4 @@
-import { upcoming, past } from './lib/upcoming.mjs';
+import { upcoming, past, featuredComingWeek } from './lib/upcoming.mjs';
 import { loadCollection } from './lib/load.mjs';
 import { campusSeatOrder } from './lib/seats.mjs';
 
@@ -93,6 +93,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData('partners', partners);
   eleventyConfig.addGlobalData('upcomingSittings', () => upcoming(events));
   eleventyConfig.addGlobalData('pastSittings', () => past(events));
+  eleventyConfig.addGlobalData('featuredUpcoming', () => featuredComingWeek(events));
 
   eleventyConfig.addFilter('nyDate', (value) => {
     if (!value) return '';
