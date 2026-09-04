@@ -1,0 +1,50 @@
+---
+layout: layout.njk
+title: Table
+description: Homepage direction — the table.
+section: Directions
+permalink: /table/index.html
+bodyClass: page-table
+---
+
+<div class="deck">
+  <header class="deck-intro">
+    <div>
+      <p class="kicker">Direction C · not locked</p>
+      <h1>The docket on the table.</h1>
+      <p class="lede">Information is the service. The past board is populated. Upcoming is empty by design — and it sits to the side.</p>
+    </div>
+    <p class="actions">
+      <a class="btn" href="/docket/">Full docket</a>
+      <a class="btn btn-quiet" href="/offer-book/">Offer book</a>
+      <a class="btn btn-quiet" href="/brief/">Brief</a>
+    </p>
+  </header>
+
+  <section class="deck-sittings" aria-labelledby="sat-heading">
+    <div class="section-head">
+      <h2 id="sat-heading">Sat · <span class="tabular">{{ pastSittings.length }}</span></h2>
+      <p class="legend">
+        <span class="chip chip-owned">Owned</span>
+        <span class="chip chip-co-hosted">Co-hosted</span>
+        <span class="chip chip-listed">Listed</span>
+      </p>
+    </div>
+    <ol class="docket-lines">
+      {% for sitting in pastSittings %}
+      <li class="line line--{{ sitting.relation }}">
+        <a href="/docket/{{ sitting.slug }}/">
+          <span class="meta">{{ sitting.startsAt | nyDay }} · {{ sitting.relation | relationLabel }}</span>
+          <strong>{{ sitting.title }}</strong>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <aside class="deck-rail">
+    {% set emptyTitle = "No sitting is on the docket yet." %}
+    {% set emptyBody = "Upcoming always resolves. An empty upcoming list is a designed state." %}
+    {% include "empty.njk" %}
+  </aside>
+</div>

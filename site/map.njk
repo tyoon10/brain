@@ -1,0 +1,55 @@
+---
+layout: layout.njk
+title: Map
+description: Homepage direction — the map.
+section: Directions
+permalink: /map/index.html
+bodyClass: page-map
+---
+
+<div class="deck">
+  <header class="deck-intro">
+    <div>
+      <p class="kicker">Direction B · not locked</p>
+      <h1>Local-first, in the city.</h1>
+      <p class="lede">{{ site.yaleLine }}</p>
+    </div>
+    <p class="actions">
+      <a class="btn" href="/docket/">Docket</a>
+      <a class="btn btn-quiet" href="/room/">Room</a>
+      <a class="btn btn-quiet" href="/table/">Table</a>
+    </p>
+  </header>
+
+  <div class="city-map">
+    <div class="plate plate-nyc">
+      <p class="kicker">New York City</p>
+      <ul class="pins">
+        {% for seat in programs %}
+          {% if seat.id != 'yale-som' %}
+          <li>
+            <a href="/seats/{{ seat.id }}/">
+              <span class="swatch" data-seat="{{ seat.id }}"></span>
+              <span class="seat-school">{{ seat.school }}</span>
+              <strong>{{ seat.shortName }}</strong>
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="plate plate-haven">
+      <p class="kicker">New Haven</p>
+      {% for seat in programs %}
+        {% if seat.id == 'yale-som' %}
+        <a class="pin-yale" href="/seats/{{ seat.id }}/">
+          <span class="swatch" data-seat="{{ seat.id }}"></span>
+          <span class="seat-school">{{ seat.school }}</span>
+          <strong>{{ seat.shortName }}</strong>
+          <span class="seat-line">{{ seat.sittingFrom }}</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

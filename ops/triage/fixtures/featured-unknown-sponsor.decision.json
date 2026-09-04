@@ -1,0 +1,23 @@
+{
+  "decision": "hold",
+  "lane": "featured-event",
+  "category": null,
+  "confidence": 0.55,
+  "reasons": [
+    "(a) in coming week",
+    "(b) NYC-anchored but weak career/learning value (mixer)",
+    "(c) sponsor/host unknown — hold, never invent"
+  ],
+  "matchedKeywords": ["nyc"],
+  "failedChecks": ["major-ai-or-big-vc-sponsor", "brain-chair-exception"],
+  "draft": {
+    "slug": "campus-mixer-unnamed",
+    "title": "Campus mixer, sponsor unnamed",
+    "summary": "A mixer next week. Sponsor/host not named; do not invent.",
+    "startsAt": "2026-09-06T19:00:00-04:00",
+    "location": "Manhattan",
+    "href": "https://luma.com/example-mixer",
+    "inferred": true,
+    "featured": false
+  }
+}

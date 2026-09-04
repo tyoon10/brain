@@ -1,0 +1,80 @@
+# Unattended jobs for the Roundtable preview branch only.
+# NEVER deploy. Do not publish to GitHub Pages or brainyc.org.
+#
+# `schedule` does not fire until this file exists on the repository
+# default branch. Until then, run via workflow_dispatch on
+# cursor/roundtable-site-e849.
+
+name: Preview unattended
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekday 12:00 UTC — morning in US Eastern (EDT).
+    - cron: '0 12 * * 1-5'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-unattended-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    name: Branch guard
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.gate.outputs.allowed }}
+    steps:
+      - id: gate
+        env:
+          REF: ${{ github.ref }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          PREVIEW='refs/heads/cursor/roundtable-site-e849'
+          if [ "$REF" = "$PREVIEW" ]; then
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+            echo "Running on $REF ($EVENT)."
+          else
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+            echo "No-op: preview unattended jobs only run on $PREVIEW (workflow_dispatch or that branch). This run is $REF / $EVENT."
+          fi
+
+  nightly-rebuild:
+    name: Nightly rebuild
+    needs: guard
+    if: needs.guard.outputs.allowed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          retention-days: 3
+
+  outbound-links:
+    name: Outbound-link checks
+    needs: [guard, nightly-rebuild]
+    if: needs.guard.outputs.allowed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+      - run: npm run check:links

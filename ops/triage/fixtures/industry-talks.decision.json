@@ -1,0 +1,23 @@
+{
+  "decision": "hold",
+  "lane": "industry",
+  "category": "acquisition",
+  "confidence": 0.74,
+  "reasons": [
+    "Talks are not a signed agreement; M&A state is rumored, not announce or closed",
+    "Tier B discovery only; chase to primary or Tier A; never include as closed"
+  ],
+  "matchedKeywords": ["acquire"],
+  "failedChecks": ["signed-agreement", "primary-or-tier-a"],
+  "draft": {
+    "slug": "anthropic-decart",
+    "title": "Anthropic in talks to acquire Decart",
+    "summary": "Anthropic is reported to be in talks to acquire Decart. Not signed and not closed.",
+    "publishedAt": "2026-08-13",
+    "href": "https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/",
+    "inferred": true,
+    "held": true,
+    "lane": "industry",
+    "category": "acquisition"
+  }
+}

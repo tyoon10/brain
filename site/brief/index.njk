@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+title: Brief
+description: Industry and campus lanes. GLM version held.
+permalink: /brief/index.html
+eleventyNavigation:
+  key: Brief
+  order: 60
+bodyClass: page-brief
+---
+<header class="page-hero">
+  <p class="kicker">Brief · {{ wire.length }} posts · two lanes</p>
+  <h1>Industry on the left. Campus on the right.</h1>
+  <p class="lede">Industry covers releases, acquisitions, investments, and partnerships from 3 March through 3 September 2026. GLM version held. Reported figures stay reported. Terms undisclosed stay undisclosed.</p>
+</header>
+<div class="wire">
+  <section>
+    <h2 class="wire-lane">Industry · {{ industryWire.length }}</h2>
+    {% for item in industryWire %}
+    {% set showNotes = true %}
+    {% set showSource = true %}
+    {% include "wire-item.njk" %}
+    {% endfor %}
+  </section>
+  <section>
+    <h2 class="wire-lane">Campus · {{ campusWire.length }}</h2>
+    {% for item in campusWire %}
+    {% set showNotes = false %}
+    {% set showSource = false %}
+    {% include "wire-item.njk" %}
+    {% endfor %}
+  </section>
+</div>

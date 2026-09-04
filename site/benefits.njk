@@ -1,0 +1,51 @@
+---
+layout: layout.njk
+title: Benefits
+description: Nineteen benefits in four time-to-value tiers.
+permalink: /benefits/index.html
+eleventyNavigation:
+  key: Benefits
+  order: 70
+bodyClass: page-ledger
+---
+<header class="page-hero">
+  <p class="kicker">Ledger · 19 benefits · four time-to-value tiers</p>
+  <h1>What lands, and how soon.</h1>
+  <p class="lede">Verified 2026-08-18 unless a row says otherwise. Cursor student rate is closed — it is not on this ledger.</p>
+</header>
+{% for tier in benefitTiers %}
+<section class="tier">
+  <h2>{{ tier.label }} · {{ tier.items.length }}</h2>
+  <table class="ledger">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Counterpart</th>
+        <th>Term</th>
+        <th>Door</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in tier.items %}
+      <tr>
+        <td>{{ b.title }}</td>
+        <td>{{ b.counterpart }}</td>
+        <td>{{ b.terms }}</td>
+        <td>
+          {% if b.href %}
+          <a href="{{ b.href }}" rel="noopener noreferrer">Open</a>
+          {% else %}
+          <span class="mute">No outbound URL in this preview</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endfor %}
+<p class="actions">
+  <a class="btn btn-quiet" href="/freshness/">How these stay fresh</a>
+  <a class="btn btn-quiet" href="/programs/">Campus programs</a>
+  <a class="btn btn-quiet" href="/labs/">Lab watchlist</a>
+</p>

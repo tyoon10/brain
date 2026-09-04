@@ -1,0 +1,19 @@
+---
+layout: layout.njk
+title: Freshness
+description: Eleven mechanisms that keep a benefit true.
+permalink: /freshness/index.html
+---
+<header class="page-hero">
+  <p class="kicker">Eleven mechanisms</p>
+  <h1>How a benefit stays true.</h1>
+  <p class="lede">Each offer on this preview is only as current as its mechanism. The as-of stamp is one of them.</p>
+</header>
+<ol class="mech-list">
+  {% for m in mechanisms %}
+  <li>
+    <h2>{{ m.name }}</h2>
+    <p>{{ m.note }}</p>
+  </li>
+  {% endfor %}
+</ol>

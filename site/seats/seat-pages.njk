@@ -1,0 +1,23 @@
+---
+pagination:
+  data: programs
+  size: 1
+  alias: school
+permalink: "/seats/{{ school.id }}/index.html"
+layout: layout.njk
+eleventyComputed:
+  title: "{{ school.shortName }}"
+---
+<article class="page-hero">
+  <p class="kicker">{{ school.school }}</p>
+  <h1>{{ school.shortName }}</h1>
+  {% if school.name != school.shortName and school.name != school.school and school.name != school.school + " " + school.shortName %}
+  <p>{{ school.name }}</p>
+  {% endif %}
+  <p class="lede">{{ school.sittingFrom }}</p>
+</article>
+<p>Colour on the map is a data swatch, not a partner mark.</p>
+<p class="actions">
+  <a class="btn btn-quiet" href="/seats/">All seats</a>
+  <a class="btn btn-quiet" href="/map/">Map direction</a>
+</p>

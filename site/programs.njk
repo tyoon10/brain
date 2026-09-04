@@ -1,0 +1,31 @@
+---
+layout: layout.njk
+title: Campus programs
+description: Six campus program rows, as of 2026-08-29 unless noted.
+permalink: /programs/index.html
+bodyClass: page-ledger
+---
+<header class="page-hero">
+  <p class="kicker">Campus table · six rows · as of 2026-08-29 unless noted</p>
+  <h1>Which doors are open.</h1>
+</header>
+<table class="ledger">
+  <thead>
+    <tr>
+      <th>Program</th>
+      <th>Status</th>
+      <th>As of</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in campusPrograms %}
+    <tr>
+      <td>{{ p.name }}</td>
+      <td><span class="chip chip-{{ p.status | statusTone }}">{{ p.status }}</span></td>
+      <td><time datetime="{{ p.asOf | isoDay }}">{{ p.asOf | isoDay }}</time></td>
+      <td>{{ p.note }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
